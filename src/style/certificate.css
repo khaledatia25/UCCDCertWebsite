@@ -1,0 +1,58 @@
+#bg {
+    background-image: url("../images/certificate.jpg");
+    background-repeat: no-repeat;
+    background-size: 1050px 800px;
+    width: 1055px;
+    height: 800px;
+    margin: 0px;
+    border-spacing: none;
+    border: 0.5px solid white;
+    padding-left: -10px;
+	position:relative;
+
+}
+
+.name {
+    text-align: center;
+    margin-top: 310px;
+    font-size: 80px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #0aa64d;
+}
+
+.program-text {
+    color: black;
+    margin-top: 0px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.date-text {
+    color: black;
+    margin-top: -19px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.hour-text {
+    color: black;
+    margin-top: -19px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.description {
+    color: black;
+    margin-top: -19px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.qr {
+    display: inline-block;
+    position: absolute;
+    bottom: 70px;
+    right: 112.5px;
+
+}
+
