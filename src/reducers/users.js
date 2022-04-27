@@ -15,7 +15,7 @@ export default (state = userReducersDefaultState, action) =>{
                 if(user.id === action.id){
                     return {
                         ...user,
-                        ...action.updates
+                        ...action.updatedUser
 
                     };
                 }else{

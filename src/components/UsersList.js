@@ -3,7 +3,10 @@ import { connect } from "react-redux";
 import UserListItem from "./UserListItem";
 import getVisibleUsers from "../selectors/users";
 import '../style/table.css';
-const UserList = (props) => (
+
+const UserList = (props) => {
+    let num = 1;
+    return(
     <table id="myTable">
             <tr id="header" className="header">
                <th className="number"> #</th>
@@ -15,7 +18,7 @@ const UserList = (props) => (
             
             {
                 props.users.map((user) => {
-                    return (<UserListItem key={user.id} {...user}/>);
+                    return (<UserListItem key={user.id} {...user} num={num++}/>);
                 })
             }
             {
@@ -24,6 +27,7 @@ const UserList = (props) => (
             }
     </table>    
 );
+        }
 
 const mapStateToProps = (state) => {
     return {

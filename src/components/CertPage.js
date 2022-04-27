@@ -1,16 +1,20 @@
 import React from "react";
 import { connect } from 'react-redux';
 import Cert from "./Cert";
-import { useParams } from "react-router-dom";
 import downloadCert from '../actions/cert';
 const CertPage = (props) => {
-    const params = useParams();
     return (
         <div>
-            <Cert {...params}/>
-            <button class="btn" onClick={downloadCert}>Download</button>
+            <Cert {...props.user}/>
+            <button class="btn" onClick={() => downloadCert(props.user.name)}>Download</button>
         </div>
     );
 }
 
-export default CertPage;
+const mapStateToProps = (state, props) => {
+    return {
+        user: state.users.find((user) => user.id === props.params.id)
+    }
+}
+
+export default connect(mapStateToProps)(CertPage);

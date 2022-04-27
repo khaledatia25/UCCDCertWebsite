@@ -4,8 +4,7 @@ import moment from "moment";
 import '../style/table.css';
 import '../style/style.css';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-let num = 1;
-const UserListItem = ({ name, id, nid, program, startDate, endDate, description, hours}) => (
+const UserListItem = ({ name, id, nid, program,num}) => (
     <tr className="table-row">
         <td className="number">{num++}</td>
         <td className="table-name">{name}</td>

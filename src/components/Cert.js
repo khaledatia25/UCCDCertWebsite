@@ -1,8 +1,9 @@
 import React  from 'react';
 import moment from 'moment';
-import { connect } from 'react-redux';
 import { QRCode } from 'react-qrcode-logo';
+import { QRCodeSVG } from 'qrcode.react';
 import '../style/certificate.css';
+
 const Cert = ({name, startDate, endDate, hours, description, program}) => {
     return (
         <div id="bg">
@@ -15,19 +16,13 @@ const Cert = ({name, startDate, endDate, hours, description, program}) => {
         </div>
         <div className="qr" >
             <QRCode 
-                value="https://www.facebook.com/"
-                size={100}
+                value='https://www.facebook.com'
+                logoImage='../images/logo.png'
             />
         </div>
     </div>
     );
 }
 
-const mapStateToProps = (state, props) => {
-    const user = state.users.find((user) => user.id === props.id);
-    return {
-        ...user
-    }
-}
 
-export default connect(mapStateToProps)(Cert);
+export default Cert;
