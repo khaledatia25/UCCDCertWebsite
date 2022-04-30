@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes, Link, NavLink } from 'react-router-dom';
 import PublicRoute from "./PublicRouter";
+import { createBrowserHistory } from "history";
 import PrivateRoute from "./PrivateRoute";
 import LoginPage from "../components/LoginPage";
 import DashBoard from "../components/Dashboard";
@@ -8,8 +9,10 @@ import EditPage from '../components/EditPage';
 import UsersPage from './../components/UsersPage';
 import CertPage from "../components/CertPage";
 import AddUserPage from "../components/AddUserPage";
+
+export const history = createBrowserHistory();
 const AppRouter = () => (
-    <BrowserRouter>
+    <BrowserRouter history={history}>
         <div>
             <Routes>
                 <Route path="/" element={<PublicRoute component={LoginPage}/>} exact={true}/>

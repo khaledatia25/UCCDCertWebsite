@@ -1,8 +1,7 @@
 import React  from 'react';
 import moment from 'moment';
-import { QRCode } from 'react-qrcode-logo';
-import { QRCodeSVG } from 'qrcode.react';
 import '../style/certificate.css';
+import QrCode from './QrCode';
 
 const Cert = ({name, startDate, endDate, hours, description, program}) => {
     return (
@@ -15,9 +14,8 @@ const Cert = ({name, startDate, endDate, hours, description, program}) => {
             <p className="description">{description}</p>
         </div>
         <div className="qr" >
-            <QRCode 
-                value='https://www.facebook.com'
-                logoImage='../images/logo.png'
+            <QrCode 
+                url='https://www.facebook.com'
             />
         </div>
     </div>

@@ -1,20 +1,27 @@
 const express = require('express');
 const router = new express.Router();
 const db = require('../db/db');
+const auth = require('../middleware/auth');
+const corsOptions = require('./corsOptions');
+const cors = require('cors');
 
 //Add User
-router.post('/user', (req, res) => {
-    const sql = "INSERT INTO user SET ?";
+router.post('/user',cors(corsOptions), auth, (req, res) => {
+try{
+        const sql = "INSERT INTO user SET ?";
     db.query(sql, req.body, (err, result) => {
         if (err)
             throw err;
         res.send(result);
     });
-    
+}catch(e){
+        res.status(400).send(e);
+    }
 });
 
 // fetch all users
-router.get('/users', (req, res)=> {
+router.get('/users',cors(corsOptions), auth, (req, res)=> {
+
     const sql = "SELECT * FROM user";
     db.query(sql, (err, result) => {
         if(err) throw err;
@@ -23,7 +30,8 @@ router.get('/users', (req, res)=> {
 });
 
 // fetch one user by id
-router.get('/users/:id', (req, res) => {
+router.get('/users/:id',cors(corsOptions), (req, res) => {
+
     const sql = "SELECT * FROM user WHERE id = ?";
     db.query(sql, req.params.id,(err, result) => {
         if(err)throw err;
@@ -35,7 +43,8 @@ router.get('/users/:id', (req, res) => {
 });
 
 //update user
-router.patch('/users/:id', (req, res) => {
+router.patch('/users/:id',cors(corsOptions), auth, (req, res) => {
+
     const {
         name,
         description,
@@ -53,7 +62,8 @@ router.patch('/users/:id', (req, res) => {
 });
 
 //delete user
-router.delete('/users/:id', (req, res) => {
+router.delete('/users/:id',cors(corsOptions), auth,(req, res) => {
+
     const sql = `DELETE FROM user where id='${req.params.id}'`
     db.query(sql, (err, result) => {
         if(err) throw err;

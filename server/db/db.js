@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-
+const jwt = require('jsonwebtoken');
 //create connection
 const db = mysql.createConnection({
     host: 'localhost',

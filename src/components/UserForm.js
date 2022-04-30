@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import { SingleDatePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css';
-
+import { history } from '../routers/AppRouter';
 
 export default class UserForm extends React.Component {
     constructor(props){
@@ -72,17 +72,28 @@ export default class UserForm extends React.Component {
         this.setState(() => ({endFocused: focused}));
     };
     
-    onSumbit = (e) => {
+    onSubmit = (e) => {
         e.preventDefault();
-        console.log(e);
+        console.log("goooo");
+            this.props.onSubmit({
+                name: this.state.name,
+                description: this.state.description,
+                nid: this.state.nid,
+                gender: this.state.gender,
+                startDate: this.state.startDate.valueOf(),
+                endDate: this.state.endDate.valueOf(),
+                program: this.state.program,
+                hours: this.state.hours,
+            });
     };
 
     render(){
         return (
-            <div className='container1'>
-                <form onSubmit={this.onSumbit}>
+            <div >
+                <div className='spacing'></div>
+                <form className="pure-form pure-form-stacked users-form" onSubmit={this.onSubmit}>
                     {this.state.error && <p>{this.state.error}</p>}
-                    <div className='form-group'>
+                    <fieldset>
                         <label>Name:</label>
                         <input 
                             className='form-control'
@@ -90,19 +101,10 @@ export default class UserForm extends React.Component {
                             type="text"
                             value={this.state.name}
                             onChange={this.onNameChange}
+                            required
                         />
-                    </div>
-                    <div className='form-group'>
-                        <label>National ID:</label>
-                        <input 
-                            className='form-control'
-                            placeholder='Enter National ID'
-                            value={this.state.nid}
-                            type="text"
-                            onChange={this.onNidChange}
-                        />
-                    </div>
-                    <div className='form-group'>
+                    </fieldset>
+                    <fieldset>
                         <label>Program:</label>
                         <input 
                             className='form-control'
@@ -111,28 +113,9 @@ export default class UserForm extends React.Component {
                             type="text"
                             onChange={this.onProgramChange}
                         />
-                    </div>
-                    <div className='form-group'>
-                        <label>Desription:</label>
-                        <input 
-                            className='form-control'
-                            placeholder='Enter Description'
-                            value={this.state.description}
-                            type="text"
-                            onChange={this.onDescriptionChange}
-                        />
-                    </div>
-                    <div className='form-group'>
-                        <label>Number of Hours:</label>
-                        <input 
-                            className='form-control'
-                            placeholder='Enter Hours'
-                            value={this.state.hours}
-                            type="number"
-                            onChange={this.onHoursChange}
-                        />
-                    </div>
-                    <div className='form-group'>
+                    </fieldset>
+                    <fieldset>
+                        <div className='user-form--small'>
                         <label>Gender:</label>
                         <select
                             className="select"
@@ -142,19 +125,8 @@ export default class UserForm extends React.Component {
                             <option value="m">Male</option>
                             <option value="f">Female</option>
                         </select>
-                    </div>
-                    <div className='form-group'>
-                        <label>Start Date:</label>
-                        <SingleDatePicker
-                            date={this.state.startDate}
-                            onDateChange={this.onStartDateChange}
-                            focused={this.state.startFocused}
-                            onFocusChange={this.onStartFocusedChange}
-                            id="start-date"
-                            numberOfMonths={1}
-                            />
-                    </div>
-                    <div className='form-group'>
+                        </div>
+                        <div className='user-form--small'>
                         <label>End Date:</label>
                         <SingleDatePicker
                             date={this.state.endDate}
@@ -164,11 +136,59 @@ export default class UserForm extends React.Component {
                             id="end-date"
                             numberOfMonths={1}
                         />
-                    </div>
-                    <div>
-                        <button className="btn btn-danger">Save User</button>
-                    </div>
+                        </div>
+                        <div className='user-form--small'>
+                        <label>Start Date:</label>
+                        <SingleDatePicker
+                            date={this.state.startDate}
+                            onDateChange={this.onStartDateChange}
+                            focused={this.state.startFocused}
+                            onFocusChange={this.onStartFocusedChange}
+                            id="start-date"
+                            numberOfMonths={1}
+                            />
+                            </div>
+                    </fieldset>
+                    <fieldset>
+                        <label>National ID:</label>
+                        <input 
+                            className='form-control'
+                            placeholder='Enter National ID'
+                            value={this.state.nid}
+                            type="text"
+                            onChange={this.onNidChange}
+                        />
+                    </fieldset>
+                    <fieldset>
+                        <label>Desription:</label>
+                        <input 
+                            className='form-control'
+                            placeholder='Enter Description'
+                            value={this.state.description}
+                            type="text"
+                            onChange={this.onDescriptionChange}
+                        />
+                    </fieldset>
+                    <fieldset>
+                        <label>Number of Hours:</label>
+                        <input 
+                            className='form-control'
+                            placeholder='Enter Hours'
+                            value={this.state.hours}
+                            type="number"
+                            onChange={this.onHoursChange}
+                        />
+                    </fieldset>
+                    
+                    
+                    
+                        <button onClick={() => {
+                            history.go(-1);
+                        }} className="button-xlarge pure-button">Save User</button>
+                    
+                    
                 </form>
+                <div className='spacing-bottom'></div>
             </div>
         );
     }

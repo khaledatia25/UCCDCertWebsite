@@ -11,8 +11,11 @@ const PublicRoute = ({isAuth, component: Component, ...rest}) => (
         )
 );
 
-const mapStateToProps = (state) => ({
-    isAuth: true
-});
+const mapStateToProps = (state) => {
+    const token = state.auth.token ;
+    return {
+        isAuth: !!token  
+    }
+};
 
 export default connect(mapStateToProps)(PublicRoute);

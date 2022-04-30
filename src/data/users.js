@@ -23,8 +23,7 @@ export default [{
     description: "Gooood",
     startDate: 5000000,
     endDate: 5000000,
-    nid: "30203141602233",
-    id: "12533"
+    nid: "30203141602233"
 },{
     name:"Samer",
     program:"Embeded",

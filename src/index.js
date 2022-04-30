@@ -1,20 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
+import { startSetUsers } from './actions/users';
 import configureStore from './store/configureStore';
 import AppRouter from './routers/AppRouter';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import './style/style.css';
-import './style/certificate.css';
+import 'purecss/build/pure.css';
+import './style/certificate.css'
+import {v4 as uuid } from 'uuid';
+console.log(uuid());
 const store = configureStore(); 
-
+const root = ReactDOM.createRoot(document.getElementById('root'));
 const jsx = (
   <Provider store={store}>
     <AppRouter />  
   </Provider>
 );
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+
+store.dispatch(startSetUsers());
+
 root.render(jsx);
 
 

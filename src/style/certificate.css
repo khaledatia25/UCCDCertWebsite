@@ -3,12 +3,15 @@
     background-repeat: no-repeat;
     background-size: 1050px 800px;
     width: 1055px;
-    height: 800px;
+    height: 100vh;
+    background-size: contain;
     margin: 0px;
     border-spacing: none;
     border: 0.5px solid white;
     padding-left: -10px;
-	position:relative;
+	position:absolute;
+    top: 0;
+    right: 0;
 
 }
 
@@ -52,7 +55,7 @@
     display: inline-block;
     position: absolute;
     bottom: 70px;
-    right: 112.5px;
+    right: 155px;
 
 }
 
