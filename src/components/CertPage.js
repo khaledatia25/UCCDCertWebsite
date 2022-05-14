@@ -9,10 +9,10 @@ const CertPage = (props) => {
             <div className="sidenav">
                 <div className="title">Templetes</div>
                 <hr />{}
-                <TempleteItem src="../images/templetes/1.jpg" templeteName="Templete-1"/>
+                <TempleteItem  templeteName="Templete-1"/>
                 <button class="pure-button" onClick={() => downloadCert(props.user.name)}>Download</button>
             </div>
-            <div className="cert-content">
+            <div className="cert-content" id="gg">
                 <Cert {...props.user}/>
                 
             </div>

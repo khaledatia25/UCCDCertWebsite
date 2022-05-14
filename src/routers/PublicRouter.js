@@ -1,15 +1,18 @@
 import React  from 'react';
 import { connect } from 'react-redux';
 import { Route, Navigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
-const PublicRoute = ({isAuth, component: Component, ...rest}) => (
-   
+const PublicRoute = ({isAuth, component: Component, ...rest}) => {
+    const params = useParams();
+    return(
+        
         !isAuth?(
-            <Component {...rest}/>
+            <Component {...rest} params={params}/>
         ):(
-            <Navigate to="/dashboard/"/>
+            <Navigate to="/users/"/>
         )
-);
+);}
 
 const mapStateToProps = (state) => {
     const token = state.auth.token ;

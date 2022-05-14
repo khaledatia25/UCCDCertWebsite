@@ -125,18 +125,7 @@ export default class UserForm extends React.Component {
                             <option value="m">Male</option>
                             <option value="f">Female</option>
                         </select>
-                        </div>
-                        <div className='user-form--small'>
-                        <label>End Date:</label>
-                        <SingleDatePicker
-                            date={this.state.endDate}
-                            onDateChange={this.onEndDateChange}
-                            focused={this.state.endFocused}
-                            onFocusChange={this.onEndFocusedChange}
-                            id="end-date"
-                            numberOfMonths={1}
-                        />
-                        </div>
+                        </div> 
                         <div className='user-form--small'>
                         <label>Start Date:</label>
                         <SingleDatePicker
@@ -146,8 +135,22 @@ export default class UserForm extends React.Component {
                             onFocusChange={this.onStartFocusedChange}
                             id="start-date"
                             numberOfMonths={1}
+                            isOutsideRange={() => false}
                             />
                             </div>
+                        <div className='user-form--small'>
+                        <label>End Date:</label>
+                        <SingleDatePicker
+                            date={this.state.endDate}
+                            onDateChange={this.onEndDateChange}
+                            focused={this.state.endFocused}
+                            onFocusChange={this.onEndFocusedChange}
+                            id="end-date"
+                            isOutsideRange={() => false}
+                            numberOfMonths={1}
+                        />
+                        </div>
+                       
                     </fieldset>
                     <fieldset>
                         <label>National ID:</label>

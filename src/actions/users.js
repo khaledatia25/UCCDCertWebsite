@@ -142,3 +142,54 @@ export const startSetUsers = () => {
         }
     }
 }
+
+//Get User by NId
+export const getUser = async (nid) => {
+    try{
+        const requestOptions = {
+            method: 'GET',
+            headers: { 
+                'Content-Type': 'application/json',
+                
+            },
+        }
+        console.log(nid)
+        return await fetch(`http://localhost:5000/user/${nid}`, requestOptions).
+            then((response) => { 
+                return response.json();
+             }).then((data) => {
+                 console.log(data);
+                 return data;
+             })
+             .catch((e) => {
+                 throw e;
+             });
+    }catch(e){
+        console.log(e)
+    }
+}
+
+export const getUserID = async (id) => {
+    try{
+        const requestOptions = {
+            method: 'GET',
+            headers: { 
+                'Content-Type': 'application/json',
+                
+            },
+        }
+        console.log(id);
+        return await fetch(`http://localhost:5000/users/${id}`, requestOptions).
+            then((response) => { 
+                return response.json();
+             }).then((data) => {
+                 console.log(data);
+                 return data;
+             })
+             .catch((e) => {
+                 throw e;
+             });
+    }catch(e){
+        console.log(e)
+    }
+}

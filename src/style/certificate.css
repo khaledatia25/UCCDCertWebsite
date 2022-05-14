@@ -1,5 +1,10 @@
+@font-face {
+    font-family: Sinami;
+    src: url("./fonts/Sinami\ demo.ttf");
+}
+
+
 #bg {
-    background-image: url("../images/certificate.jpg");
     background-repeat: no-repeat;
     background-size: 1050px 800px;
     width: 1055px;
@@ -14,12 +19,15 @@
     right: 0;
 
 }
+#bg .cert {
+    position: absolute;
+}
 
 .name {
     text-align: center;
     margin-top: 310px;
     font-size: 80px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Sinami,Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #0aa64d;
 }
 

@@ -35,7 +35,7 @@ router.post('/admin/logout', cors(corsOptions), auth,async (req, res) => {
     const sql = `DELETE FROM tokens WHERE token = '${req.body.token}'`
     db.query(sql, (err, result) => {
         if(err) throw err;
-        res.send(result);
+        res.send();
     });
 });
 

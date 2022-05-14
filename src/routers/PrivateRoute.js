@@ -9,7 +9,7 @@ const PrivateRourte = ({isAuth, component: Component, ...rest}) =>{
        return (isAuth?(
             <Component params={params} {...rest}/>
         ):(
-            <Navigate to="/"/>
+            <Navigate to="/login"/>
         )
     
 );

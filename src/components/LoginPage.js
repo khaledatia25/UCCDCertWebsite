@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { startLogin } from "../actions/auth";
 import { history } from './../routers/AppRouter';
 
@@ -58,20 +59,34 @@ class LoginPage extends React.Component {
                                     value={this.state.username}
                                     onChange={this.onEmailChange}
                                     placeholder="Email"
-                                    />  
+                                    name="username"
+                                    required
+                                    />
+                                    <div className="login-spacing"></div>  
                                 <input 
                                     className="input100" 
                                     type= {this.visible?"text" : "password"} 
                                     value={this.state.password}
                                     onChange={this.onPasswordChange}
                                     placeholder="Pasword"
+                                    required
+                                    name="password"
+                                    
                                    />
+
                                    {!!this.state.error && <span className="pure-form-message">{this.state.error}</span>}
-                                <button type="submit" name="admin_login" className="pure-button login-button"> Login </button>
-                                
+                                   <div className="login-spacing"></div> 
+                                   <button type="submit" name="admin_login" className="pure-button login-button"> Login </button>
+                                   <div className="login-spacing"></div> 
+                                <div><NavLink className="go-back" to="/">Go Back</NavLink></div>
                             </fieldset>
+                            
+                                
+                        
                         </form>
+                        
                     </div>
+                    
                 </div>
         );
     }

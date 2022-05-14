@@ -6,7 +6,9 @@ import QrCode from './QrCode';
 const Cert = ({name, startDate, endDate, hours, description, program}) => {
     return (
         <div id="bg">
+        
         <div className="name-text">
+
             <p className="name">{name}</p>
             <p className="program-text">Has Attended The Program {program}</p>
             <p className="date-text">From {moment(startDate).format('MMM Do, YYY')} To {moment(endDate).format('MMM Do, YYY')}</p>

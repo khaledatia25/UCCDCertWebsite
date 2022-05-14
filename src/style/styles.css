@@ -66,6 +66,9 @@ label {
 .spacing-bottom {
     height: em;
 }
+.login-spacing {
+    margin-top: .5em;
+}
 .user-form--small {
     display: inline-block;
     margin-right: 5em;
@@ -74,7 +77,7 @@ label {
     color: white;
     width: 100%;
     font-size: 3em;
-    margin-bottom: .5em;
+    margin-bottom: 0em;
     font-weight: 700;
     text-align: center;
 }
@@ -129,6 +132,7 @@ label {
 }
 .login-box .input100 {
     width: 100%;
+    margin-bottom: 3em;
 
 }
 .login-box .login-button {
@@ -189,7 +193,7 @@ label {
  */
 
 .splash-container {
-    background: #1f8dd6;
+    background: white;
     z-index: 1;
     overflow: hidden;
     /* The following styles are required for the "scroll-over" effect */
@@ -202,13 +206,32 @@ label {
 
 .splash {
     /* absolute center .splash within .splash-container */
-    width: 80%;
-    height: 50%;
+    width: auto;
+    height: 100%;
     margin: auto;
     position: absolute;
-    top: 100px; left: 0; bottom: 0; right: 0;
+    /* top: 100px; left: 0; bottom: 0; right: 0; */
     text-align: center;
     text-transform: uppercase;
+}
+.splash-img {
+    position: relative;
+    top: 50%;
+    right: 50%;
+    left: 50%;
+    bottom: 50%;
+}
+section {
+    position: relative;
+    display: block;
+
+}
+.second-section:before {
+    content: '';
+    display: table;
+}
+.second-section:after {
+    clear: both;
 }
 
 /* This is the main heading that appears on the blue section */
@@ -222,7 +245,10 @@ label {
     border-radius: 5px;
     line-height: 1em;
 }
-
+#search-header {
+    display: block;
+    margin-bottom: 5em;
+}
 /* This is the subheading that appears on the blue section */
 .splash-subhead {
     color: white;
@@ -458,6 +484,9 @@ tr .button-secondary {
     background: #16123f;
 
 }
+.public-search {
+    margin-bottom: 1em;
+}
 
 /*
  * -- TABLET (AND UP) MEDIA QUERIES --
@@ -503,6 +532,42 @@ tr .button-secondary {
     }
 
 }
+
+#footer {
+    background: #eee;
+    padding: .5em;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+  }
+  #footer p {
+    color: #888;
+    font-size: 1em;
+  }
+  #footer a {
+    color: #608dfd;
+    text-decoration: none;
+  }
+  #footer a:visited {
+    color: #608dfd;
+    text-decoration: none;
+  }
+  #footer a:hover {
+    border-bottom: 2px solid #608dfd;
+  }
+
+  .go-back {
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    left: 42%;
+    font-size: 1em;
+    padding-top: 0em;
+  }
 
 /*
  * -- DESKTOP (AND UP) MEDIA QUERIES --
