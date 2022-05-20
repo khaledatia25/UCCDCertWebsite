@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import Cert from "./Cert";
-import downloadCert from '../actions/cert';
+import Qr from '../actions/cert'
 import TempleteItem from "./TempleteItem";
 const CertPage = (props) => {
     return (
@@ -10,7 +10,7 @@ const CertPage = (props) => {
                 <div className="title">Templetes</div>
                 <hr />{}
                 <TempleteItem  templeteName="Templete-1"/>
-                <button class="pure-button" onClick={() => downloadCert(props.user.name)}>Download</button>
+                <button class="pure-button" onClick={() => Qr(props.user.id)}>Download</button>
             </div>
             <div className="cert-content" id="gg">
                 <Cert {...props.user}/>

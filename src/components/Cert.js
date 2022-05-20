@@ -11,15 +11,20 @@ const Cert = ({name, startDate, endDate, hours, description, program}) => {
 
             <p className="name">{name}</p>
             <p className="program-text">Has Attended The Program {program}</p>
-            <p className="date-text">From {moment(startDate).format('MMM Do, YYY')} To {moment(endDate).format('MMM Do, YYY')}</p>
+            <p className="date-text">From {moment(parseInt(startDate)).format('MMM Do, Y')} To {moment(parseInt(endDate)).format('MMM Do, Y')}</p>
             <p className="hour-text">For {hours} Hours </p>
             <p className="description">{description}</p>
+            
         </div>
         <div className="qr" >
-            <QrCode 
+            
+                <QrCode 
                 url='https://www.facebook.com'
-            />
+                />
+            
+            
         </div>
+        
     </div>
     );
 }

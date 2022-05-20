@@ -4,6 +4,7 @@ const db = require('../db/db');
 const auth = require('../middleware/auth');
 const corsOptions = require('./corsOptions');
 const cors = require('cors');
+const pdf = require('./cert');
 
 //Add User
 router.post('/user',cors(corsOptions), auth, (req, res) => {
@@ -13,7 +14,7 @@ try{
         if (err){
            return res.status(400).send(err);
         }
-            
+        console.log(req.body);    
         res.send();
         });
 }catch(e){
@@ -96,6 +97,29 @@ router.delete('/users/:id',cors(corsOptions), auth,(req, res) => {
         if(err) throw err;
         res.send();
     });
+});
+
+//certificate router
+router.get('/certificate/:id',cors(corsOptions),(req, res, next) => {
+    const sql = "SELECT * FROM user WHERE id = ?";
+    db.query(sql, req.params.id,(err, result) => {
+        if(err){
+           return res.status(400).send(err)
+        };
+        if(!result.length){
+            return res.status(404).send("Not Found");
+        }
+        const stream = res.writeHead(200, {
+            'Content-Type': 'application/pdf',
+            'Content-Disposition': 'attachment;filename=invoice.pdf'
+        });
+        pdf(result[0],(chunk) => {
+            stream.write(chunk);
+        }, () => stream.end() );
+    });
+    
+    
+
 });
 
 

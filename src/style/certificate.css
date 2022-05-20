@@ -5,35 +5,34 @@
 
 
 #bg {
+    background: url("../images/certificate.webp");
     background-repeat: no-repeat;
-    background-size: 1050px 800px;
     width: 1055px;
     height: 100vh;
     background-size: contain;
-    margin: 0px;
-    border-spacing: none;
-    border: 0.5px solid white;
-    padding-left: -10px;
-	position:absolute;
-    top: 0;
-    right: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 
 }
-#bg .cert {
-    position: absolute;
-}
 
+.name-text {
+    display: flex;
+    flex-direction: column;
+}
 .name {
     text-align: center;
-    margin-top: 310px;
-    font-size: 80px;
+    margin-top: 21rem;
+    margin-bottom: 2rem;
+    margin-right: 3rem;
+    font-size: 5rem;
     font-family: Sinami,Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #0aa64d;
 }
 
 .program-text {
     color: black;
-    margin-top: 0px;
+    margin-top: 0;
     font-size: 30px;
     text-align: center;
 }
@@ -60,10 +59,9 @@
 }
 
 .qr {
-    display: inline-block;
     position: absolute;
-    bottom: 70px;
-    right: 155px;
-
+    right: 14.8rem;
+    bottom: 4.2rem;
 }
+
 

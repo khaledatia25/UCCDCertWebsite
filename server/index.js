@@ -4,6 +4,8 @@ const userRouter = require('./routers/userRouter');
 const adminRouter = require('./routers/adminRouter');
 const cors = require('cors');
 
+require("./routers/cert");
+
 
 const app = express();
 const port = 5000;
