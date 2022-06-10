@@ -5,7 +5,7 @@
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 500;
     background: #c7ddcc49;
     color: #16123f;
@@ -15,14 +15,14 @@
     margin-bottom: 3em;
 }
 .information-box .user-name{
-    font-weight: 00;
-    font-size: 5rem;
+  font-weight: 100;
+  font-size: 3rem;
 }
 .verf-page img {
-    width: 16em;
-    position: absolute;
-    top: -2em;
-    left: -3em;
+  width: 16em;
+  position: absolute;
+  top: -2em;
+  left: -3em;
 }
 
 #footer {
@@ -31,10 +31,11 @@
     position: absolute;
     bottom: 0;
     width: 100%;
+    font-size: 15px;
   }
   #footer p {
     color: #888;
-    font-size: 14px;
+    
   }
   #footer a {
     color: #608dfd;
@@ -48,23 +49,26 @@
         margin: 1rem;
         margin-left: 10em;
         margin-right: 10em;
+        
     }
   }
-  @media(max-width: 400px){
+  @media(max-width: 700px){
     .information-box {
         margin-top: 3em;
         margin-bottom: 3em;
-        font-size: 1.5rem;
+        font-size: .8rem;
+        line-height: 1em;
     }
     .information-box .user-name{
         font-weight: 700;
-        font-size: 3rem;
+        font-size: 2rem;
+        line-height: 1em;
     }
     
     .verf-page img {
-        width: 16em;
+        width: 12em;
         position: absolute;
-        top: -2em;
+        top: -1.5em;
         left: -3em;
     }
   }

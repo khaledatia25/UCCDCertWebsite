@@ -30,9 +30,9 @@ class VerificationPage extends React.Component {
             <div id='footer'>
                 <div className='container text-center'>
                 <p>
-                    This Website designed and created by our volunteers
-                    <a href='https://www.linkedin.com/in/khaled-waleed-mohammed/'>Khaled Waleed Attia</a>{", "}
-                    <a>Ahmed Mohammed Seif</a>
+                    This Website designed and created by our volunteers{" "}
+                    <a target='_blank' href='https://www.linkedin.com/in/khaled-waleed-mohammed/'>Khaled Waleed Attia</a>{", "}
+                    <a>{" "}Ahmed Mohammed Seif</a>
                 </p>
                 </div>
             </div>

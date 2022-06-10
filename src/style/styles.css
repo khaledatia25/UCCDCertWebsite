@@ -432,6 +432,13 @@ tr .button-secondary {
     width: 80%;
 }  
 
+#check-boxes {
+    color: #16123f;
+    justify-content: center;
+    margin-left: 2em;
+    font-size: 1.2em;    
+}
+
 .cert-content {
     margin-left: 20em;
     padding-left: 5em;
@@ -442,6 +449,7 @@ tr .button-secondary {
    width: 18em;
    margin-top: 1em;
    margin-left: 1em;
+   margin-bottom: 2em;
    position: relative;
    justify-self: center;
    text-align: center;

@@ -5,7 +5,7 @@ const QrCode = require('easyqrcodejs-nodejs');
 const moment = require('moment');
 
 
-const buildPDF = async (user ,dataCallBack, endCallBack) => {
+const buildPDF = async (certOptions, user ,dataCallBack, endCallBack) => {
     console.log(moment(parseInt(user.startDate)).format('MMM Do, Y'))
     const options = {
         text: "vdv",
@@ -17,6 +17,27 @@ const buildPDF = async (user ,dataCallBack, endCallBack) => {
         
 
     };
+    const renderDesc = () => {
+        if(certOptions.date === 'true'){
+            return `${user.description}`;
+        }else{
+            return '';
+        }
+    }
+    const renderHours = () =>{
+        if(certOptions.hours === 'true'){
+            return `For ${user.hours} Hours`;
+        }else{
+            return '';
+        }
+    }
+    const renderDate = () => {
+        if(certOptions.date === 'true'){
+            return `From ${moment(parseInt(user.startDate)).format('MMM Do, Y')} To ${moment(parseInt(user.endDate)).format('MMM Do, Y')} `;
+        }else{
+            return '';
+        }
+    }
     const qr = new QrCode(options);
     qr.saveImage({
         path: 'q.png'
@@ -27,7 +48,7 @@ const buildPDF = async (user ,dataCallBack, endCallBack) => {
     });
     doc.on('data', dataCallBack);
     doc.on('end', endCallBack);
-    doc.image('certificate.png', 0, 0,{fit: [840, 800]})
+    doc.image('temp-1.png', 0, 0,{fit: [840, 800]})
         .stroke()
     doc.font('fonts/Sinami demo.ttf')
         .fontSize(60).fillColor('#0aa64d')
@@ -38,11 +59,31 @@ const buildPDF = async (user ,dataCallBack, endCallBack) => {
     .fillColor('black')
     .font('Times-Roman')
     .fontSize(25)
-    .text(`Has Attended The Program ${user.program} 
-    From ${moment(parseInt(user.startDate)).format('MMM Do, Y')} To ${moment(parseInt(user.endDate)).format('MMM Do, Y')} 
-    For ${user.hours} Hours`,50,320,{
+    .text(`For attending ${user.program} Program`,50,320,{
         align: 'center'
     });
+    doc
+    .fillColor('black')
+    .font('Times-Roman')
+    .fontSize(25)
+    .text(`${renderHours()}`,50,345,{
+        align: 'center'
+    });
+    doc
+    .fillColor('black')
+    .font('Times-Roman')
+    .fontSize(25)
+    .text(`${renderDate()}`,50,370,{
+        align: 'center'
+    });
+    doc
+    .fillColor('black')
+    .font('Times-Roman')
+    .fontSize(25)
+    .text(`${renderDesc()} `,50,395,{
+        align: 'center'
+    });
+    
     doc.image('q.png', 657.5, 440, {fit: [90, 90]})
         .stroke();    
 

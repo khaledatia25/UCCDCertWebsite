@@ -2,10 +2,10 @@ const mysql = require('mysql');
 const jwt = require('jsonwebtoken');
 //create connection
 const db = mysql.createConnection({
-    host: 'sql11.freesqldatabase.com',
-    user: 'sql11494210',
-    password: 'Za1Fe9L7S5',
-    database: "sql11494210"
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: "uccd"
 });
 
 // connect to mySql

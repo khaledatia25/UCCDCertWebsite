@@ -1,3 +1,5 @@
+import base from "./base";
+
 const setCookie = (cName, cValue, expDays) => {
         let date = new Date();
         date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
@@ -15,8 +17,8 @@ export const login = (token) => ({
     token
 });
 
-export const startLogin = ({username = '', password = ''}) => {
-    return (dispatch, getState) => {
+export const startLogin =  ({username = '', password = ''}) => {
+    return   (dispatch, getState) => {
         try{
             const requestOptions = {
                 method: 'POST',
@@ -25,12 +27,12 @@ export const startLogin = ({username = '', password = ''}) => {
                 },
                 body: JSON.stringify({username , password}),
             }
-            return  fetch("http://localhost:5000/admin/login", requestOptions).
+            return  fetch(`${base}/admin/login`, requestOptions).
                 then((response) => response.json()).then((data) => {
                     if(data.error){
                         return data
                     }
-                    dispatch(login(data.token));
+                    dispatch({...login(data.token)});
                     setCookie('token', data.token, 10);
                 }).catch((e) => {
                      throw e;
@@ -45,8 +47,8 @@ export const logout = () => ({
     type: 'LOGOUT'
 });
 
-export const startLogOut = () => {
-    return (dispatch, getState) => {
+export const startLogOut =  () => {
+    return  (dispatch, getState) => {
         const token  = getState().auth.token;
         const requestOptions = {
             method: 'POST',
@@ -56,7 +58,7 @@ export const startLogOut = () => {
             },
             body: JSON.stringify({ token }),
         }
-        fetch("http://localhost:5000/admin/logout",requestOptions).
+         fetch(`${base}/admin/logout`,requestOptions).
             then(res => {
                 console.log(res);
                 dispatch(logout());

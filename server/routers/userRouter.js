@@ -66,7 +66,7 @@ router.get('/user/:nid',cors(corsOptions), (req, res) => {
 });
 
 //update user
-router.patch('/users/:id',cors(corsOptions), auth, (req, res) => {
+router.patch('/users/:id',cors(corsOptions), auth, async(req, res) => {
     try{
     const {
         name,
@@ -78,11 +78,11 @@ router.patch('/users/:id',cors(corsOptions), auth, (req, res) => {
         hours
     } = req.body;
     const sql = `UPDATE user SET nid='${nid}', name='${name}', program='${program}', description='${description}',startDate='${startDate}',endDate='${endDate}',hours='${hours}' WHERE id = '${req.params.id}'`;
-    db.query(sql, (err, result) => {
+    await db.query(sql, async (err, result) => {
         if(err) {
             return res.status(400).send(err);
         };
-        res.send();
+        await res.send();
     });
     }catch(e){
         res.status(400).send(e);
@@ -100,21 +100,29 @@ router.delete('/users/:id',cors(corsOptions), auth,(req, res) => {
 });
 
 //certificate router
-router.get('/certificate/:id',cors(corsOptions),(req, res, next) => {
+router.get('/certificate/:id/:temp/:date/:description/:hours',cors(corsOptions),async (req, res, next) => {
     const sql = "SELECT * FROM user WHERE id = ?";
-    db.query(sql, req.params.id,(err, result) => {
+    const options = {
+        temp: req.params.temp,
+        date: req.params.date,
+        description: req.params.description,
+        hours: req.params.hours
+
+    };
+    console.log(options);
+     db.query(sql, req.params.id, async (err, result) => {
         if(err){
            return res.status(400).send(err)
         };
         if(!result.length){
             return res.status(404).send("Not Found");
         }
-        const stream = res.writeHead(200, {
+        const stream =  await res.writeHead(200, {
             'Content-Type': 'application/pdf',
             'Content-Disposition': 'attachment;filename=invoice.pdf'
         });
-        pdf(result[0],(chunk) => {
-            stream.write(chunk);
+        pdf(options,result[0],async (chunk) => {
+            await stream.write(chunk);
         }, () => stream.end() );
     });
     

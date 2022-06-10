@@ -1,12 +1,11 @@
-import html2pdf from '../../node_modules/html2pdf.js/dist/html2pdf.bundle.min';
+import base from "./base";
 
-
-export default async (id) => {
+export default async (options) => {
     try{
         const requestOptions = {
             method: 'GET',
         }
-        return fetch(`http://localhost:5000/certificate/${id}`, requestOptions).
+        return await fetch(`${base}/certificate/${options.id}/${options.tempNum}/${options.date}/${options.description}/${options.hours}`, requestOptions).
         then((res) => {
             console.log(res);
         }).catch((e) => {
@@ -18,24 +17,3 @@ export default async (id) => {
     }
 }
 
-// export default (name) => {
-//     const element = document.getElementById('bg');
-//     let opt = {
-//         margin: 0,
-//         filename: `${name}.pdf`,
-//         image: {
-//         type: 'jpg',
-//         quality: 1
-//         },
-//         html2canvas: {
-//         scale: 2
-//         },
-//         jsPDF: {
-//         unit: 'in',
-//         format:'letter',
-//         orientation: 'landscape'
-//         }
-//         };
-//     html2pdf().from(element).set(opt).save();
-
-// }
