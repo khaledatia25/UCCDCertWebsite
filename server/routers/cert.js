@@ -8,7 +8,7 @@ const moment = require('moment');
 const buildPDF = async (certOptions, user ,dataCallBack, endCallBack) => {
     console.log(moment(parseInt(user.startDate)).format('MMM Do, Y'))
     const options = {
-        text: "vdv",
+        text: `http://uccdeng.com/verify/${user.id}`,
         logo: 'favicon.png',
         logoWidth: 20,
         logoHeight: 20,
