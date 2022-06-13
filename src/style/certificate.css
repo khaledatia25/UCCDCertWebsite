@@ -9,10 +9,10 @@
     background: url("../images/temp_1.webp");
     background-repeat: no-repeat;
     width: 1055px;
-    height: 100vh;
+    height: 800px;
     background-size: contain;
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     text-align: center;
 
 }
@@ -20,51 +20,65 @@
 #bg-1 .name-text {
     display: flex;
     flex-direction: column;
+    line-height: 5px;
+    margin-top: 246px;
 }
+#bg-1 .name-text p {
+    display: inline-block;
+}
+
 #bg-1 .name {
     text-align: center;
-    margin-top: 21rem;
-    margin-bottom: 2rem;
-    margin-right: 3rem;
-    font-size: 5rem;
+    font-size: 90px;
     font-family: Sinami,Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #0aa64d;
+    
 }
 
 #bg-1 .program-text {
     color: black;
-    margin-top: 0;
-    font-size: 30px;
     text-align: center;
+    font-size: 30px;
+    margin-top: -39px;
+    
 }
 
 #bg-1 .date-text {
     color: black;
-    margin-top: -19px;
-    font-size: 30px;
     text-align: center;
+    margin-top: 0px;
+    font-size: 30px;
+    
+    
 }
 
 #bg-1 .hour-text {
     color: black;
-    margin-top: -19px;
-    font-size: 30px;
     text-align: center;
+    margin-top: 1px;
+    font-size: 30px;
+    
 }
 
 #bg-1 .description {
     color: black;
-    margin-top: -19px;
-    font-size: 30px;
     text-align: center;
+    font-size: 30px;
+    margin-top: -2px;
+    
 }
 
 
 
 #bg-1 .qr {
-    position: absolute;
-    right: 14.8rem;
-    bottom: 4.2rem;
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse
+}
+
+#bg-1 .qr span {
+    position: relative;
+    right: 118px;
 }
 
 #bg-2 {

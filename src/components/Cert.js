@@ -3,7 +3,7 @@ import moment from 'moment';
 import '../style/certificate.css';
 import QrCode from './QrCode';
 
-const Cert = ({name, showHours,startDate, endDate, hours, description, program, temp, showDate, showDesc}) => {
+const Cert = ({qrP,name, showHours,startDate, endDate, hours, description, program, temp, showDate, showDesc}) => {
     return (
         <div id={`bg-${temp}`}>
         
@@ -17,11 +17,17 @@ const Cert = ({name, showHours,startDate, endDate, hours, description, program, 
             {showDesc && <p className="description">{description}</p>}
             
         </div>
-        <div className="qr" >
-            
+        <div className="qr" style={{
+            position: 'relative',
+            display: 'flex',
+            flexDirection: 'row-reverse',
+            top: `${qrP}px`
+        }}>
+                <span>
                 <QrCode 
                 url='https://www.facebook.com'
                 />
+                </span>
             
             
         </div>

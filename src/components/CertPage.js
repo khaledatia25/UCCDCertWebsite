@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import Cert from "./Cert";
 import Qr from '../actions/cert'
 import TempleteItem from "./TempleteItem";
+
+
+ 
 class CertPage extends React.Component {
     constructor(props){
         super(props);
@@ -13,10 +16,12 @@ class CertPage extends React.Component {
             tempNum: 1,
             date: false,
             description: false,
-            hours: false
+            hours: false,
+            qr: 130,
         }
+        this.numberOfRenderd = 0;
     }
-
+    
     onTempClick = (e,t) => {
         this.setState({
             tempNum: t
@@ -27,16 +32,34 @@ class CertPage extends React.Component {
         this.setState({
             date: e.target.checked
         });
+        
+        this.numberOfRenderd = e.target.checked ? this.numberOfRenderd +1 : this.numberOfRenderd -1;
+        this.setState({
+            qr: this.numberOfRenderd === 0 ? 130 : this.numberOfRenderd ===1 ? 94 : this.numberOfRenderd === 2 ? 62 : 27
+        });
+       
+        
     }
     onDescriptionCheck = (e) => {
         this.setState({
             description: e.target.checked
         });
+        this.numberOfRenderd = e.target.checked ? this.numberOfRenderd +1 : this.numberOfRenderd -1;
+        this.setState({
+            qr: this.numberOfRenderd === 0 ? 130 : this.numberOfRenderd ===1 ? 94 : this.numberOfRenderd === 2 ? 62 : 27
+        });
+        
+
     }
     onHoursCheck = (e) => {
         this.setState({
             hours: e.target.checked
         });
+        this.numberOfRenderd = e.target.checked ? this.numberOfRenderd +1 : this.numberOfRenderd -1;
+        this.setState({
+            qr: this.numberOfRenderd === 0 ? 130 : this.numberOfRenderd ===1 ? 94 : this.numberOfRenderd === 2 ? 62 : 27
+        });
+        
     }
     download = () => {
         const options = {
@@ -89,7 +112,7 @@ class CertPage extends React.Component {
                     <button className="pure-button" onClick={() => this.download()}>Download</button>
                 </div>
                 <div className="cert-content" id="gg">
-                    <Cert {...this.props.user} temp={this.state.tempNum} showHours={this.state.hours} showDate={this.state.date} showDesc={this.state.description}/>
+                    <Cert qrP = {this.state.qr} {...this.props.user} temp={this.state.tempNum} showHours={this.state.hours} showDate={this.state.date} showDesc={this.state.description}/>
                     
                 </div>
                 
