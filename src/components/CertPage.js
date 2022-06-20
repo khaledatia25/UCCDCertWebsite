@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Cert from "./Cert";
 import Qr from '../actions/cert'
 import TempleteItem from "./TempleteItem";
-
+import base from "../actions/base";
 
  
 class CertPage extends React.Component {
@@ -18,6 +18,7 @@ class CertPage extends React.Component {
             description: false,
             hours: false,
             qr: 130,
+            temp5: 100,
         }
         this.numberOfRenderd = 0;
     }
@@ -35,7 +36,8 @@ class CertPage extends React.Component {
         
         this.numberOfRenderd = e.target.checked ? this.numberOfRenderd +1 : this.numberOfRenderd -1;
         this.setState({
-            qr: this.numberOfRenderd === 0 ? 130 : this.numberOfRenderd ===1 ? 94 : this.numberOfRenderd === 2 ? 62 : 27
+            qr: this.numberOfRenderd === 0 ? 130 : this.numberOfRenderd ===1 ? 94 : this.numberOfRenderd === 2 ? 62 : 27,
+            temp5: 100 - 30*this.numberOfRenderd
         });
        
         
@@ -46,7 +48,8 @@ class CertPage extends React.Component {
         });
         this.numberOfRenderd = e.target.checked ? this.numberOfRenderd +1 : this.numberOfRenderd -1;
         this.setState({
-            qr: this.numberOfRenderd === 0 ? 130 : this.numberOfRenderd ===1 ? 94 : this.numberOfRenderd === 2 ? 62 : 27
+            qr: this.numberOfRenderd === 0 ? 130 : this.numberOfRenderd ===1 ? 94 : this.numberOfRenderd === 2 ? 62 : 27,
+            temp5: 100 - 30*this.numberOfRenderd
         });
         
 
@@ -57,7 +60,8 @@ class CertPage extends React.Component {
         });
         this.numberOfRenderd = e.target.checked ? this.numberOfRenderd +1 : this.numberOfRenderd -1;
         this.setState({
-            qr: this.numberOfRenderd === 0 ? 130 : this.numberOfRenderd ===1 ? 94 : this.numberOfRenderd === 2 ? 62 : 27
+            qr: this.numberOfRenderd === 0 ? 130 : this.numberOfRenderd ===1 ? 94 : this.numberOfRenderd === 2 ? 62 : 27,
+            temp5: 100 - 30*this.numberOfRenderd
         });
         
     }
@@ -109,10 +113,10 @@ class CertPage extends React.Component {
                     <div onClick={(e) => this.onTempClick(e,5)}>
                         <TempleteItem  temp={5} templeteName="Templete-5"/>                    
                     </div>
-                    <button className="pure-button" onClick={() => this.download()}>Download</button>
+                    <a className="pure-button" href={`${base}/certificate/${this.state.id}/${this.state.tempNum}/${this.state.date}/${this.state.description}/${this.state.hours}`} target="_blank">Download</a>
                 </div>
                 <div className="cert-content" id="gg">
-                    <Cert qrP = {this.state.qr} {...this.props.user} temp={this.state.tempNum} showHours={this.state.hours} showDate={this.state.date} showDesc={this.state.description}/>
+                    <Cert temp5={this.state.temp5} qrP = {this.state.qr} {...this.props.user} temp={this.state.tempNum} showHours={this.state.hours} showDate={this.state.date} showDesc={this.state.description}/>
                     
                 </div>
                 

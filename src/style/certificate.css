@@ -85,7 +85,7 @@
     background: url("../images/temp_2.webp");
     background-repeat: no-repeat;
     width: 1055px;
-    height: 100vh;
+    height: 720px;
     background-size: contain;
     display: flex;
     flex-direction: column;
@@ -96,62 +96,74 @@
 #bg-2 .name-text {
     display: flex;
     flex-direction: column;
+    line-height: 5px;
+    margin-top: 276px;
+}
+#bg-2 .name-text p {
+    display: inline-block;
 }
 #bg-2 .name {
     text-align: center;
-    margin-top: 21rem;
-    margin-bottom: 2rem;
-    margin-right: 3rem;
-    font-size: 3.5rem;
-    font-family: 'Times New Roman','Cairo',Cambria, Cochin, Georgia, Times,  serif;
-    color: #000;
+    font-size: 60px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
 }
 
 #bg-2 .program-text {
     color: black;
-    margin-top: 0;
-    font-size: 30px;
     text-align: center;
+    font-size: 30px;
+    margin-top: -20px;
+    
 }
 
 #bg-2 .date-text {
     color: black;
-    margin-top: -19px;
-    font-size: 30px;
     text-align: center;
+    margin-top: 0px;
+    font-size: 30px;
+    
+    
 }
 
 #bg-2 .hour-text {
     color: black;
-    margin-top: -19px;
-    font-size: 30px;
     text-align: center;
+    margin-top: 1px;
+    font-size: 30px;
+    
 }
 
 #bg-2 .description {
     color: black;
-    margin-top: -19px;
-    font-size: 30px;
     text-align: center;
+    font-size: 30px;
+    margin-top: -2px;
+    
 }
 
 
 
 #bg-2 .qr {
-    position: absolute;
-    right: 14.8rem;
-    bottom: 4.5rem;
-    margin-bottom: 0;
-} 
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+#bg-2 .qr span {
+    position: relative;
+    left: 115px;
+}
 #bg-2 .qr::after {
     content: 'This Certificate is Verfied With QR Code';
-    font-size: .7em;
+    font-size: 10px;
     margin: 0;
     padding: 0;
     width: 150px;
-    position: absolute;
-    bottom: -1em;
-    right: -1em;
+    position: relative;
+    right: 20px;
+    top: 115px;
+    height: 25px;
     line-height: 15px;
 
 }
@@ -160,11 +172,11 @@
     background: url("../images/temp_3.webp");
     background-repeat: no-repeat;
     width: 513px;
-    height: 100vh;
+    height: 720px;
     background-size: contain;
     display: flex;
-    margin-left: 20%;
     flex-direction: column;
+    margin-left: 20%;
     text-align: center;
 
 }
@@ -172,61 +184,75 @@
 #bg-3 .name-text {
     display: flex;
     flex-direction: column;
+    line-height: 5px;
+    margin-top: 230px;
+}
+#bg-3 .name-text p {
+    display: inline-block;
 }
 #bg-3 .name {
     text-align: center;
-    margin-top: 17rem;
-    margin-bottom: 2rem;
-    margin-right: 1.5rem;
-    font-size: 3rem;
-    line-height: 1em;
-    font-family: 'Times New Roman',Cambria, Cochin, Georgia, Times,  serif;
-    color: #000;
+    font-size: 40px;
+    line-height: 35px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
 }
 
 #bg-3 .program-text {
     color: black;
-    margin-top: -1em;
-    font-size: 1.3em;
     text-align: center;
+    font-size: 25px;
+    margin-top: -20px;
+    
 }
 
 #bg-3 .date-text {
     color: black;
-    margin-top: -19px;
-    font-size: 1.3em;
     text-align: center;
+    margin-top: 0px;
+    font-size: 25px;
+    
+    
 }
 
 #bg-3 .hour-text {
     color: black;
-    margin-top: -19px;
-    font-size: 1.3em;
     text-align: center;
+    margin-top: 1px;
+    font-size: 25px;
+    
 }
 
 #bg-3 .description {
     color: black;
-    margin-top: -19px;
-    font-size: 1.8em;
     text-align: center;
+    font-size: 25px;
+    margin-top: -2px;
+    
 }
+
 
 
 #bg-3 .qr {
-    position: absolute;
-    right: 29rem;
-    bottom: 4.2rem;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+#bg-3 .qr span {
+    position: relative;
+    left: 50px;
 }
 #bg-3 .qr::after {
     content: 'This Certificate is Verfied With QR Code';
-    font-size: .7em;
+    font-size: 10px;
     margin: 0;
     padding: 0;
     width: 150px;
-    position: absolute;
-    bottom: -1em;
-    right: -1em;
+    position: relative;
+    right: 80px;
+    top: 115px;
+    height: 25px;
     line-height: 15px;
 
 }
@@ -236,84 +262,97 @@
     background: url("../images/temp_4.webp");
     background-repeat: no-repeat;
     width: 513px;
-    height: 100vh;
+    height: 720px;
     background-size: contain;
     display: flex;
-    margin-left: 20%;
     flex-direction: column;
+    margin-left: 20%;
     text-align: center;
 
 }
-
 
 #bg-4 .name-text {
     display: flex;
     flex-direction: column;
+    line-height: 5px;
+    margin-top: 240px;
+}
+#bg-4 .name-text p {
+    display: inline-block;
 }
 #bg-4 .name {
     text-align: center;
-    margin-top: 17.5rem;
-    margin-bottom: 2rem;
-    margin-right: 1.5rem;
-    font-size: 3rem;
-    line-height: 1em;
-    font-family: 'Times New Roman',Cambria, Cochin, Georgia, Times,  serif;
-    color: #000;
+    font-size: 40px;
+    line-height: 35px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
 }
 
 #bg-4 .program-text {
     color: black;
-    margin-top: -1em;
-    font-size: 1.3em;
     text-align: center;
+    font-size: 25px;
+    margin-top: -20px;
+    
 }
 
 #bg-4 .date-text {
     color: black;
-    margin-top: -19px;
-    font-size: 1.3em;
     text-align: center;
+    margin-top: 0px;
+    font-size: 25px;
+    
+    
 }
 
 #bg-4 .hour-text {
     color: black;
-    margin-top: -19px;
-    font-size: 1.3em;
     text-align: center;
+    margin-top: 1px;
+    font-size: 25px;
+    
 }
 
 #bg-4 .description {
     color: black;
-    margin-top: -19px;
-    font-size: 1.3em;
     text-align: center;
+    font-size: 25px;
+    margin-top: -2px;
+    
 }
+
 
 
 #bg-4 .qr {
-    position: absolute;
-    right: 29rem;
-    bottom: 4.2rem;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+#bg-4 .qr span {
+    position: relative;
+    left: 50px;
 }
 #bg-4 .qr::after {
     content: 'This Certificate is Verfied With QR Code';
-    font-size: .7em;
+    font-size: 10px;
     margin: 0;
     padding: 0;
     width: 150px;
-    position: absolute;
-    bottom: -1em;
-    right: -1em;
+    height: 25px;
+    position: relative;
+    right: 80px;
+    top: 100px;
     line-height: 15px;
 
 }
-
 /* Templete-5 styles */
+
 #bg-5 {
     background: url("../images/temp_5.webp");
     background-repeat: no-repeat;
     width: 1055px;
-    height: 100vh;
+    height: 720px;
     background-size: contain;
     display: flex;
     flex-direction: column;
@@ -324,65 +363,75 @@
 #bg-5 .name-text {
     display: flex;
     flex-direction: column;
+    line-height: 5px;
+    margin-top: 276px;
+}
+#bg-5 .name-text p {
+    display: inline-block;
 }
 #bg-5 .name {
     text-align: center;
-    margin-top: 21rem;
-    margin-bottom: 2rem;
-    margin-right: 3rem;
-    font-size: 3.5rem;
-    font-family: 'Times New Roman','Cairo',Cambria, Cochin, Georgia, Times,  serif;
-    color: #000;
+    font-size: 60px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
 }
 
 #bg-5 .program-text {
     color: black;
-    margin-top: 0;
-    font-size: 30px;
     text-align: center;
+    font-size: 30px;
+    margin-top: -20px;
+    
 }
 
 #bg-5 .date-text {
     color: black;
-    margin-top: -19px;
-    font-size: 30px;
     text-align: center;
+    margin-top: 0px;
+    font-size: 30px;
+    
+    
 }
 
 #bg-5 .hour-text {
     color: black;
-    margin-top: -19px;
-    font-size: 30px;
     text-align: center;
+    margin-top: 1px;
+    font-size: 30px;
+    
 }
 
 #bg-5 .description {
     color: black;
-    margin-top: -19px;
-    font-size: 30px;
     text-align: center;
+    font-size: 30px;
+    margin-top: -2px;
+    
 }
 
 
 
 #bg-5 .qr {
-    position: absolute;
-    right: 13rem;
-    bottom: 5.8rem;
-    margin-bottom: 0;
-} 
-#bg-5 .qr::after {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+#bg-5 .qr span {
+    position: relative;
+    right: 150px;
+}
+/* #bg-5 .qr::after {
     content: 'This Certificate is Verfied With QR Code';
-    font-size: .7em;
+    font-size: 10px;
     margin: 0;
     padding: 0;
     width: 150px;
-    position: absolute;
-    bottom: -1em;
-    right: -1em;
+    height: 25px;
+    position: relative;
+    right: 20px;
+    top: 115px;
     line-height: 15px;
 
-}
-
-
+} */
 

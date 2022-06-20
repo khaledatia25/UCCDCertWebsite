@@ -3,7 +3,7 @@ import moment from 'moment';
 import '../style/certificate.css';
 import QrCode from './QrCode';
 
-const Cert = ({qrP,name, showHours,startDate, endDate, hours, description, program, temp, showDate, showDesc}) => {
+const Cert = ({qrP,name, temp5,showHours,startDate, endDate, hours, description, program, temp, showDate, showDesc}) => {
     return (
         <div id={`bg-${temp}`}>
         
@@ -20,8 +20,8 @@ const Cert = ({qrP,name, showHours,startDate, endDate, hours, description, progr
         <div className="qr" style={{
             position: 'relative',
             display: 'flex',
-            flexDirection: 'row-reverse',
-            top: `${qrP}px`
+            flexDirection: temp == 1 || temp == 5 ?'row-reverse' : 'row',
+            top: temp == 5 ? `${temp5}px`:`${qrP}px`
         }}>
                 <span>
                 <QrCode 
@@ -31,6 +31,7 @@ const Cert = ({qrP,name, showHours,startDate, endDate, hours, description, progr
             
             
         </div>
+        {temp == 5 ? (<div className='temp-5-qr-spacing'></div>) : ''}
         
     </div>
     );
