@@ -163,7 +163,7 @@ export const getUser = async (nid) => {
                  return data;
              })
              .catch((e) => {
-                 throw e;
+                 console.log(e);
              });
     }catch(e){
         console.log(e)

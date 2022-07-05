@@ -3,8 +3,7 @@ import { connect } from "react-redux";
 import { setTextFilter, searchByID, searchByName, searchByProgram} from "../actions/filters";
 const UserSearch = (props) => {
     return (
-        <form className="pure-form search-form">
-                <fieldset>
+        <form className="search-form">
                 <input  
                     type="text" 
                     placeholder="Search Users" 
@@ -29,7 +28,6 @@ const UserSearch = (props) => {
                     <option value="program">Program</option>
                     <option value="name">Name</option>
                 </select>
-            </fieldset>
         </form>
     );
 }

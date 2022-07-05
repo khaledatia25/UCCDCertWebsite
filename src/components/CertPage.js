@@ -77,10 +77,11 @@ class CertPage extends React.Component {
     }
     render(){
         return (
-            <div>
+            <div className="cert-page">
                 <div className="sidenav">
-                <hr/>
-                    <div id="check-boxes">
+                    <div className="check-boxes">
+                        <h3>Options</h3>
+                        <hr></hr>
                         <div>
                             <input value={this.state.date} type="checkbox" placeholder="date" id="date" onChange={(e) => this.onDateCheck(e)}/>
                             <label htmlFor="date">Date</label>
@@ -94,10 +95,10 @@ class CertPage extends React.Component {
                             <label htmlFor="hours">Hours</label>
                         </div>
                     </div>
-                    <hr/>
-                    <div className="title">Templetes</div>
+                    
+                    <h3>Templetes</h3>
                     <hr />{}
-
+                    <div className="templetes">
                     <div onClick={(e) => this.onTempClick(e,1)}>
                         <TempleteItem  temp={1} templeteName="Templete-1"/>
                     </div>
@@ -113,7 +114,8 @@ class CertPage extends React.Component {
                     <div onClick={(e) => this.onTempClick(e,5)}>
                         <TempleteItem  temp={5} templeteName="Templete-5"/>                    
                     </div>
-                    <a className="pure-button" href={`${base}/certificate/${this.state.id}/${this.state.tempNum}/${this.state.date}/${this.state.description}/${this.state.hours}`} target="_blank">Download</a>
+                    </div>
+                    <a className="button" href={`${base}/certificate/${this.state.id}/${this.state.tempNum}/${this.state.date}/${this.state.description}/${this.state.hours}`} target="_blank">Download</a>
                 </div>
                 <div className="cert-content" id="gg">
                     <Cert temp5={this.state.temp5} qrP = {this.state.qr} {...this.props.user} temp={this.state.tempNum} showHours={this.state.hours} showDate={this.state.date} showDesc={this.state.description}/>

@@ -17,20 +17,7 @@ const Cert = ({qrP,name, temp5,showHours,startDate, endDate, hours, description,
             {showDesc && <p className="description">{description}</p>}
             
         </div>
-        <div className="qr" style={{
-            position: 'relative',
-            display: 'flex',
-            flexDirection: temp == 1 || temp == 5 ?'row-reverse' : 'row',
-            top: temp == 5 ? `${temp5}px`:`${qrP}px`
-        }}>
-                <span>
-                <QrCode 
-                url='https://www.facebook.com'
-                />
-                </span>
-            
-            
-        </div>
+        
         {temp == 5 ? (<div className='temp-5-qr-spacing'></div>) : ''}
         
     </div>

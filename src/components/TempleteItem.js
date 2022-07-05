@@ -1,11 +1,8 @@
 import React from "react";
 
 const TempleteItem = (props) =>(
-    <div className="templete-item">
+    <div className={`templete-item ${props.templeteName}`}>
         <img src={require(`../images/temp_${props.temp}.webp`)}/>
-        <div className="middle">
-            <div className="text">{props.templeteName}</div>
-        </div>
     </div>
 );
 

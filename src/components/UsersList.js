@@ -8,7 +8,7 @@ const UserList = (props) => {
     let num = 1;
     return(
     <div className="user-list">  
-        <table  className="pure-table pure-table-bordered">
+        <table  className="user-table">
             <thead>
                 <tr>
                 <th className="number"> #</th>

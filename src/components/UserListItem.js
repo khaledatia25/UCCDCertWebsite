@@ -9,9 +9,9 @@ const UserListItem = ({ name, id, nid, program,num, onDeleteUserClick}) => (
         <td className="nid">{nid}</td>
         <td className="program">{program}</td>
         <td className="action action--item">
-            <Link className="pure-button button-success button-small" to={`/edit/${id}`} >Edit</Link>
-            <Link className="pure-button button-secondary button-small" to={`/cert/${id}`} >Certificate</Link>
-            <button className="button-error button-small pure-button" onClick={onDeleteUserClick}>Delete</button>
+            <Link className="user-action-button" to={`/edit/${id}`} >Edit</Link>
+            <Link className="user-action-button" to={`/cert/${id}`} >Certificate</Link>
+            <button className="user-action-button danger" onClick={onDeleteUserClick}>Delete</button>
         </td>
 
     </tr>

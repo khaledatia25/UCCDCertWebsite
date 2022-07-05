@@ -52,7 +52,7 @@ class LoginPage extends React.Component {
                         UCCD <span>ADMIN LOGIN</span>
                         </div>
                         <form onSubmit={this.onSubmit} className="pure-form pure-form-stacked" > 
-                            <fieldset>
+                            <div className="--log">
                                 <input 
                                     className="input100" 
                                     type="email" 
@@ -79,8 +79,8 @@ class LoginPage extends React.Component {
                                    <button type="submit" name="admin_login" className="pure-button login-button"> Login </button>
                                    <div className="login-spacing"></div> 
                                 <div><NavLink className="go-back" to="/">Go Back</NavLink></div>
-                            </fieldset>
                             
+                            </div>
                                 
                         
                         </form>

@@ -1,590 +1,504 @@
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-/*
- * -- BASE STYLES --
- * Most of these are inherited from Base, but I want to change a few.
- */
-body {
-    line-height: 1.7em;
-    color: #7f8c8d;
-    font-size: 13px;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-label {
-    color: #34495e;
-}
-
-.pure-img-responsive {
-    max-width: 100%;
-    height: auto;
-}
-
-/*
- * -- LAYOUT STYLES --
- * These are some useful classes which I will need
- */
-.l-box {
-    padding: 1em;
-    margin-top: 3em;
-}
-.xl-box {
-    margin-top: 4.5em;
-}
-
-.l-box-lrg {
-    padding: 2em;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-.login-box {
-    /* width: 100vh; */
-    height: 100vh;
+.page {
     display: flex;
-    overflow: auto;
-    justify-content: center; 
-    background: #c7ddcc;
-}
-.login-box--l {
-    position: relative;
-    top: 30%;
-}
-.is-center {
-    text-align: center;
-}
-.spacing {
-    margin-bottom: 2em;
-}
-.spacing-bottom {
-    height: em;
-}
-.login-spacing {
-    margin-top: .5em;
-}
-.user-form--small {
-    display: inline-block;
-    margin-right: 5em;
-}
-.login-box .title {
-    color: white;
+    height: 97vh;
     width: 100%;
-    font-size: 3em;
-    margin-bottom: 0em;
-    font-weight: 700;
-    text-align: center;
-}
-.title span {
-    font-size: 1em;
-    color: #16123f;
-}
-
-
-
-
-/*
- * -- PURE FORM STYLES --
- * Style the form inputs and labels
- */
-.users-form label {
-    margin: 1em 0 0;
-    font-weight: bold;
-    font-size: 100%;
-}
-
-.users-form input[type] {
-    border: 2px solid #ddd;
-    box-shadow: none;
-    font-size: 100%;
-    width: 100%;
-    margin-bottom: 1em;
-}
-
-.search-form,
-.search-form fieldset
-{
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    padding: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-.search-form input {
-    width: 90%;
-}
-.login-box .pure-form{
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-}
-.login-box fieldset {
-    width: 100%;
-    margin-top: 2em;
-}
-.login-box .input100 {
-    width: 100%;
-    margin-bottom: 3em;
-
-}
-.login-box .login-button {
-    color: white;
-    background: #ffe26a;
-    width: 100%;
-}
-
-
-
-
-
-/*
- * -- MENU STYLES --
- * I want to customize how my .pure-menu looks at the top of the page
- */
-
-.home-menu {
-    padding: 0.5em;
-    text-align: center;
-    box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
-}
-.home-menu {
-    background: #75c9b7;
-}
-.pure-menu.pure-menu-fixed {
-    /* Fixed menus normally have a border at the bottom. */
-    border-bottom: none;
-    /* I need a higher z-index here because of the scroll-over effect. */
-    z-index: 4;
-}
-
-.home-menu .pure-menu-heading {
-    color: #16123f;
-    font-weight: 700;
-    font-size: 120%;
-}
-
-.home-menu .pure-menu-selected a {
-    color: white;
-}
-
-.home-menu a {
-    color: #f3f3f8;
-    font-weight: 500;
-}
-.home-menu li a:hover,
-.home-menu li a:focus {
-    background: none;
-    border: none;
-    color: #AECFE5;
-}
-
-
-/*
- * -- SPLASH STYLES --
- * This is the blue top section that appears on the page.
- */
-
-.splash-container {
-    background: white;
-    z-index: 1;
-    overflow: hidden;
-    /* The following styles are required for the "scroll-over" effect */
-    width: 100%;
-    height: 88%;
-    top: 0;
-    left: 0;
-    position: fixed !important;
-}
-
-.splash {
-    /* absolute center .splash within .splash-container */
-    width: auto;
-    height: 100%;
+    min-width: 1040px;
+    min-height: 630px;
     margin: auto;
-    position: absolute;
-    /* top: 100px; left: 0; bottom: 0; right: 0; */
-    text-align: center;
-    text-transform: uppercase;
+    flex-direction: column;
+    justify-content: start;
 }
-.splash-img {
-    position: relative;
-    top: 50%;
-    right: 50%;
-    left: 50%;
-    bottom: 50%;
-}
-section {
-    position: relative;
-    display: block;
-
-}
-.second-section:before {
-    content: '';
-    display: table;
-}
-.second-section:after {
-    clear: both;
-}
-
-/* This is the main heading that appears on the blue section */
-.splash-head {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    border: 3px solid white;
-    padding: 1em 1.6em;
-    font-weight: 100;
-    border-radius: 5px;
-    line-height: 1em;
-}
-#search-header {
-    display: block;
-    margin-bottom: 5em;
-}
-/* This is the subheading that appears on the blue section */
-.splash-subhead {
-    color: white;
-    letter-spacing: 0.05em;
-    opacity: 0.8;
-}
-
-/*
- * -- CONTENT STYLES --
- * This represents the content area (everything below the blue section)
- */
-.content-wrapper {
-    /* These styles are required for the "scroll-over" effect */
-    position: absolute;
-    top: 87%;
-    width: 100%;
-    min-height: 12%;
-    z-index: 2;
-    background: white;
-
-}
-
-/* Buttons */
-.button-xsmall {
-    font-size: 70%;
-}
-
-li .button-small {
-    font-size: 85%;
-    font-weight: 700;
-    border-radius: 5px;
-    color: rgb(202, 60, 60);
-    background: none;
-}
-
-.button-large {
-    font-size: 110%;
-}
-
-form .button-xlarge,
-div .button-xlarge{
-    font-size: 125%;
-    width: 100%;
-    color: white;
-    border-radius: 4px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    background: #16123f;
-}
-.edit .button-xlarge {
-     margin-top: .5em;
-}
-tr .button-success,
-tr .button-error,
-tr .button-warning,
-tr .button-secondary {
-            color: white;
-            border-radius: 4px;
-            text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-        }
-
-        tr .button-success {
-            background: #abd699;
-            /* this is a green */
-        }
-
-        tr .button-error,
-        div .button-error{
-            background: rgb(202, 60, 60);
-            /* this is a maroon */
-        }
-
-        tr .button-warning {
-            background: rgb(223, 117, 20);
-            /* this is an orange */
-        }
-
-        tr .button-secondary {
-            background: #ffe26a;
-            /* this is a light blue */
-        }
-
-/* We want to give the content area some more padding */
-.content {
-    padding: 1em 1em 3em;
-}
-
-/* This is the class used for the main content headers (<h2>) */
-.content-head {
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin: 2em 0 1em;
-}
-
-/* This is a modifier class used when the content-head is inside a ribbon */
-.content-head-ribbon {
-    color: white;
-}
-
-/* This is the class used for the content sub-headers (<h3>) */
-.content-subhead {
-    color: #1f8dd6;
-}
-    .content-subhead i {
-        margin-right: 7px;
-    }
-
-/* This is the class used for the dark-background areas. */
-.ribbon {
-    background: #2d3e50;
-    color: #aaa;
-}
-
-/* This is the class used for the footer */
-.footer {
-    background: #111;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-/* pure table */
-.pure-table {
-    width: 100%;
-}
-/* .pure-table thead {
+.page .header {
     display: flex;
     justify-content: space-between;
-} */
-.pure-table .number {
-    width: 1em;
+    background: linear-gradient(to left, #063b0a, #218018);
+    height: 84px;
+    /* margin-bottom: 10px; */
+    z-index: 1;
+    box-shadow: 1px 1px 12px 11px #8888887a;
 }
-.pure-table .name-- {
-    width: 30em;
+button:hover{
+    cursor: pointer;
+}
+.page
+.header
+.logo {
+    text-decoration: none;
+    font-size: 30px;
+    color: aliceblue;
+    width: 300px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.page
+.header
+.logo:visited {
+    color: aliceblue;
+}
+
+.page
+.header
+.links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 35%;
+    margin-right: 20px;
+    list-style-type: none;
+}
+.page
+.header
+.links li {
+    width: calc(97%/3);
+
+}
+.page
+.header
+.links li .-link {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 16px;
+}
+.page
+.header
+.links li .logout-button {
+    background: none;
+    color: #f6ed43;
+    border: 1px solid #f6ed43;
+    border-radius: 50px;
+    width: 90%;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+.page
+.header
+.links li .logout-button:hover {
+    cursor: pointer;
+}
+.page .search-form {
+    background-color: #dfdfdf;
+    height: 80px;
+    border: none;width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 10px 10px 10px;
+    border-bottom: 3px solid #063b0a;
+}
+.header
+.-link {
+    text-decoration: none;
+    color: #f6ed43;
+}
+.page 
+.search-form
+input {
+    background: none;
+    width: 94%;
+    border: none;
+    height: 40px;
+    outline: none;
+    border: 2px solid #063b0a;
+    border-radius: 50px;
+    padding-left: 30px;
+
+}
+.page 
+.search-form
+input:focus {
+    border: none;
+}
+.page 
+.search-form
+select {
+    background-color:aliceblue;
+    text-align: center;
+    border: 1px solid #063b0a;
+    border-radius: 25px;
+    width: 5%;
+    outline: none;
+}
+.page 
+.user-list {
+    flex-grow: 1;
+    height: 50%;
+    width: 100%;
+    background: #dfdfdf;
+}
+.page 
+.user-list 
+table
+{
+    width: 100%;
+}
+.page 
+.user-list 
+table
+thead{
+    width: 100%;
+}
+.page 
+.user-list 
+table
+thead 
+.number {
+    width: 3%;
+}
+.page 
+.user-list 
+table
+tr 
+.number {
+    width: 3%;
     text-align: center;
 }
-.pure-table .nid {
-    width: 15em;
+.page 
+.user-list 
+table
+thead 
+.name {
+    width: 30%;
+}
+.page 
+.user-list 
+table
+tr 
+.name-- {
+    width: 30%;
     text-align: center;
 }
-.pure-table .program {
-    width: 20em;
+.page 
+.user-list 
+table
+thead 
+.nid {
+    width: 20%;
+}
+.page 
+.user-list 
+table
+tr 
+.nid {
+    width: 20%;
     text-align: center;
 }
-.pure-table .action {
-    width: 30em;
+.page 
+.user-list 
+table
+thead 
+.program {
+    width: 15%;
+}
+
+.page 
+.user-list 
+table
+tr 
+.program {
+    width: 15%;
     text-align: center;
 }
-.pure-table .action--item {
+.page 
+.user-list 
+table
+thead 
+.action {
+    width: 30%;
+}
+.page 
+.user-list 
+table
+tr 
+.action {
+    width: 100%;
     display: flex;
     justify-content: space-around;
+    /* height: 30px; */
+    align-items: center;
+    margin-top: 5px;
 }
-
-.no-users-msg {
-    color: #c7ddcc;
-    margin-top: 7em;
-    position: relative;
-    margin-left: 45%;
-    font-size: 2em;
-}
-.sidenav {
-    height: 100%;
-    width: 20em;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #ffe26a;
-    overflow-x: hidden;
-  }
-.sidenav .title {
-    color: #16123f;
+.page 
+.user-list 
+table
+tr 
+.action
+.user-action-button {
+    width: 100px;
+    background: linear-gradient(to left, #063b0a, #4e9548);
     text-align: center;
-    font-size: 2em;
-    margin-top: .5em;
-}
-.sidenav hr {
-    color: #abd699;
-    height: 2px;
-    background: #abd699;
+    border-radius: 10px;
     border: none;
-    width: 80%;
-}  
-
-#check-boxes {
-    color: #16123f;
+    height: 30px;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    margin-left: 2em;
-    font-size: 1.2em;    
+    text-decoration: none;
+    color: white;
+
+}
+.page 
+.user-list 
+table
+tr 
+.action
+.user-action-button:hover {
+    cursor: pointer;
+}
+.page 
+.user-list 
+table
+tr 
+.action .danger {
+    background: rgb(255, 48, 48);
+}
+.page 
+.user-list 
+table
+tr {
+    height: 43px;
+    font-size: 19px;
+    border-bottom: 2px solid #218018;
+    box-shadow: 1px 1px 0px 0px #2b9f73;
+}
+.page 
+.user-list 
+table
+thead 
+.number {
+    width: 3%;
 }
 
-.cert-content {
-    margin-left: 20em;
-    padding-left: 5em;
+.user-form {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    /* background: #dfdfdf; */
+}
+.user-form
+fieldset {
+    border: none;
+    border-bottom: solid 1px #063b0a;
     display: flex;
     flex-direction: column;
-  }
-.templete-item {
-   width: 18em;
-   margin-top: 1em;
-   margin-left: 1em;
-   margin-bottom: 2em;
-   position: relative;
-   justify-self: center;
-   text-align: center;
 }
-
-.templete-item img {
-    width: 16em;
-    position: relative;
-    opacity: 1;
-    transition:  .5 ease;
-    backface-visibility: hidden;
+.user-form
+.user-form-s {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
 }
-.templete-item:hover img {
-    opacity: .3;
+.user-form
+input {
+    background: none;
+    border: none;
+    transition: font-size ease .3s;
+    /* font-size: 20px; */
 }
-.templete-item:hover .middle {
-    opacity: 1;
+.user-form
+input:focus {
+    border: none;
+    outline: none;
+    font-size: 20px;
 }
-.middle .text {
-    color: #16123f;
-    font-size: 1.5em;
-    padding: .2em .2em;
-    margin-bottom: 50%;
+.user-form
+input:focus::placeholder {
+    color: transparent;
 }
-.templete-item .middle {
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    margin-bottom: 5em;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%)
+.user-form
+label {
+    font-size: 25px;
+    color: #218018;
+    margin-right: 10px;
 }
-.sidenav .pure-button {
-    position: fixed;
-    bottom: 0em;
-    width: 20em;
+.user-form
+.button {
+    background: #063b0a;
     color: white;
-    background: #16123f;
-
+    height: 40px;
+    border: none;
+    border-radius: 25px;
 }
-.public-search {
-    margin-bottom: 1em;
+.user-form
+.hours {
+    border: none;
 }
-
-/*
- * -- TABLET (AND UP) MEDIA QUERIES --
- * On tablets and other medium-sized devices, we want to customize some
- * of the mobile styles.
- */
-@media (min-width: 48em) {
-
-    /* We increase the body font size */
-    body {
-        font-size: 16px;
-    }
-
-    /* We can align the menu header to the left, but float the
-    menu items to the right. */
-    .home-menu {
-        text-align: left;
-    }
-        .home-menu ul {
-            float: right;
-        }
-
-    /* We increase the height of the splash-container */
-/*    .splash-container {
-        height: 500px;
-    }*/
-
-    /* We decrease the width of the .splash, since we have more width
-    to work with */
-    .splash {
-        width: 50%;
-        height: 50%;
-    }
-
-    .splash-head {
-        font-size: 250%;
-    }
-
-
-    /* We remove the border-separator assigned to .l-box-lrg */
-    .l-box-lrg {
-        border: none;
-    }
-
-}
-
-#footer {
-    background: #eee;
-    padding: .5em;
-    position: absolute;
-    bottom: 0;
+/* .edit-page {
+    height: 110vh;
+} */
+.edit-page
+.delete-button {
     width: 100%;
-    text-align: center;
-    text-decoration: none;
-  }
-  #footer p {
-    color: #888;
-    font-size: 1em;
-  }
-  #footer a {
-    color: #608dfd;
-    text-decoration: none;
-  }
-  #footer a:visited {
-    color: #608dfd;
-    text-decoration: none;
-  }
-  #footer a:hover {
-    border-bottom: 2px solid #608dfd;
-  }
-
-  .go-back {
-    width: 100%;
-    text-align: center;
-    text-decoration: none;
+    margin-top: 5px;
+    background: #dd2c2c;
     color: white;
-    position: relative;
-    left: 42%;
-    font-size: 1em;
-    padding-top: 0em;
-  }
+    height: 40px;
+    border: none;
+    border-radius: 25px;
+}
 
-/*
- * -- DESKTOP (AND UP) MEDIA QUERIES --
- * On desktops and other large devices, we want to over-ride some
- * of the mobile and tablet styles.
- */
-@media (min-width: 78em) {
-    /* We increase the header font size even more */
-    .splash-head {
-        font-size: 300%;
-    }
+.login-box {
+    width: 100%;
+    height: 97vh;
+    display: flex;
+    background: #2b9f73;
+    justify-content: center;
+    align-items: center;
+}
+.login-box
+.login-box--l {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    height: 600px;
+    justify-content: end;
+}
+.login-box
+.login-box--l
+.title {
+    color: #f6ed43;
+    font-size: 48px;
+}
+.login-box
+.login-box--l
+.title
+span {
+    color: white;
+}
+.login-box
+.login-box--l 
+form {
+    width: 400px;
+    display: flex;
+    height: 350px;
+    flex-direction: column;
+}
+.login-box
+.login-box--l 
+form 
+.--log {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 187px;
+}
+.login-box
+.login-box--l 
+form 
+.--log 
+input {
+    height: 40px;
+    padding: 0 10px;
+    transition: font-size ease .3s;
+
+}
+.login-box
+.login-box--l 
+form 
+.--log 
+input::placeholder{
+    color: #063b0a;
+}
+.login-box
+.login-box--l 
+form 
+.--log 
+input:focus {
+    outline: none;
+    border: none;
+    font-size: 20px;
+}
+.login-box
+.login-box--l 
+form 
+.--log 
+input:focus::placeholder {
+    color: transparent;
+}
+.login-box
+.login-box--l 
+form 
+.--log
+button {
+    height: 40px;
+    border: none;
+    background: #063b0a;
+    color:aliceblue;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.login-box
+.login-box--l 
+form 
+.--log
+.go-back {
+    text-decoration: none;
+    color: aliceblue;
+    font-weight: 800;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border: 2px solid aliceblue;
+}
+
+.show-list {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.show-list::-webkit-scrollbar {
+    width: 12px;
+}
+
+.show-list::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+
+.show-list::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+.show-list
+.show-item {
+    background: #218018;
+    color: white;
+    width: 90%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    padding: 20px;
+
+}
+.show-list
+.show-item
+.name {
+    font-size: 30px;
+    font-weight: 500;
+}
+.show-list
+.show-item
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    /* padding: 10px; */
 }

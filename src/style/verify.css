@@ -1,5 +1,5 @@
 .verf-page{
-    height: 100vh;
+    height: 97vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -30,7 +30,8 @@
     padding: 30px 0;
     position: absolute;
     bottom: 0;
-    width: 100%;
+    width: 99.5%;
+    /* height: px; */
     font-size: 15px;
   }
   #footer p {
