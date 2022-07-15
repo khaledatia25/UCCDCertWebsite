@@ -98,7 +98,7 @@ button:hover{
 .search-form
 input {
     background: none;
-    width: 94%;
+    width: 84%;
     border: none;
     height: 40px;
     outline: none;
@@ -110,7 +110,13 @@ input {
 .page 
 .search-form
 input:focus {
-    border: none;
+    /* border: none; */
+}
+.page
+.search-form 
+.number {
+    width: 8%;
+
 }
 .page 
 .search-form
@@ -127,13 +133,58 @@ select {
     flex-grow: 1;
     height: 50%;
     width: 100%;
+    position: relative;
     background: #dfdfdf;
+}
+.page 
+.user-list
+.no-users-msg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 75px;
+    color: #063b0a;
+    
+}
+.page 
+.user-list
+.user-list-scroll {
+    height: 100%;
+    overflow: auto;
+    height: calc(100%-207px);
 }
 .page 
 .user-list 
 table
 {
     width: 100%;
+    height: 500px;
+    /* overflow-y: scroll; */
+}
+.page 
+.user-list 
+.user-list-scroll::-webkit-scrollbar {
+    width: 12px;
+}
+
+.page 
+.user-list
+.user-list-scroll::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+
+.page 
+.user-list
+.user-list-scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #063b0a;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
 .page 
 .user-list 
@@ -214,13 +265,15 @@ thead
 table
 tr 
 .action {
-    width: 100%;
+    width: 30%;
     display: flex;
     justify-content: space-around;
     /* height: 30px; */
     align-items: center;
     margin-top: 5px;
+    flex-grow: 1;
 }
+
 .page 
 .user-list 
 table
@@ -263,6 +316,8 @@ tr {
     font-size: 19px;
     border-bottom: 2px solid #218018;
     box-shadow: 1px 1px 0px 0px #2b9f73;
+    display: flex;
+    justify-content: space-around;
 }
 .page 
 .user-list 
@@ -271,7 +326,22 @@ thead
 .number {
     width: 3%;
 }
-
+.page 
+.user-list 
+table
+tbody {
+    overflow-y: scroll;
+    max-height: 200px;
+}
+.page 
+.user-list 
+table
+tbody
+td {
+    /* display: flex; */
+    /* display: inline-bloc; */
+    overflow: hidden;
+}
 .user-form {
     flex-grow: 1;
     display: flex;

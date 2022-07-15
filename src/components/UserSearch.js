@@ -1,9 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import { setTextFilter, searchByID, searchByName, searchByProgram} from "../actions/filters";
+import { setTextFilter, searchByID, searchByName, searchByProgram, setNumberAppears} from "../actions/filters";
 const UserSearch = (props) => {
     return (
-        <form className="search-form">
+        <form className="search-form" onSubmit={(e) => {
+            e.preventDefault();
+        }}>
                 <input  
                     type="text" 
                     placeholder="Search Users" 
@@ -28,6 +30,15 @@ const UserSearch = (props) => {
                     <option value="program">Program</option>
                     <option value="name">Name</option>
                 </select>
+                <input 
+                className="number"
+                    type="numper"
+                    placeholder="0"
+                    value={props.filters.numAppears}
+                    onChange={(e) => {
+                        props.dispatch(setNumberAppears(e.target.value));
+                    }}
+                />
         </form>
     );
 }

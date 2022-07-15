@@ -3,7 +3,7 @@ import moment from 'moment';
 import '../style/certificate.css';
 import QrCode from './QrCode';
 
-const Cert = ({qrP,name, temp5,showHours,startDate, endDate, hours, description, program, temp, showDate, showDesc}) => {
+const Cert = ({qrP,name, temp5,showHours,startDate, endDate, hours, description, program, temp, showDate, showDesc, id}) => {
     return (
         <div id={`bg-${temp}`}>
         
@@ -17,8 +17,17 @@ const Cert = ({qrP,name, temp5,showHours,startDate, endDate, hours, description,
             {showDesc && <p className="description">{description}</p>}
             
         </div>
+        <div className='qr'>
+            <QrCode 
+            url={`http://uccdeng.com/verify/${id}`}
+            logoImage="../images/favicon.ico"
+            size="250"
+            fgColor="#050505"
+            quietZone="0"
+
+            />
+        </div>
         
-        {temp == 5 ? (<div className='temp-5-qr-spacing'></div>) : ''}
         
     </div>
     );

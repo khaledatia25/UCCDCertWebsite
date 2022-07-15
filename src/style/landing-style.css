@@ -146,6 +146,7 @@
     background-repeat: repeat-x;
     flex-direction: row;
     justify-content: space-between;
+    position: relative;
     /* margin-top: 20px; */
     align-items: center;
     background-position-y: 18px;
@@ -155,8 +156,8 @@
     position: absolute;
     height: 72px;
     width: 357px;
-    bottom: 10px;
-    left: 8px
+    bottom: -8px;
+    left: 0px;
 }
 #landing-page .footer .social-media {
     display: inline-flex;

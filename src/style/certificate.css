@@ -8,7 +8,9 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
 
- 
+ :root {
+    --cerNameColor: #0aa64d
+ }
 .cert-page {
     height: 97vh;
     display: flex;
@@ -145,17 +147,23 @@ h3 {
     margin-bottom: 50px;
 }
 
+#qr-code-logo {
+    width: 200px;
+    height: 200px;
+    background: #eee;
+}
 /* Templete-1 Styles */
 #bg-1 {
     background: url("../images/temp_1.webp");
     background-repeat: no-repeat;
-    width: 1055px;
+    width: 979px;
     height: 800px;
     background-size: contain;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    position: relative;
 
 }
 
@@ -174,7 +182,7 @@ h3 {
     text-align: center;
     font-size: 70px;
     font-family: Sinami,Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: #0aa64d;
+    color: var(--cerNameColor);
     
 }
 
@@ -218,25 +226,22 @@ h3 {
 
 
 #bg-1 .qr {
-    position: relative;
-    display: flex;
-    flex-direction: row-reverse
+    position: absolute;
+    bottom: 65px;
+    right: 103px;
 }
 
-#bg-1 .qr span {
-    position: relative;
-    right: 118px;
-}
 
 #bg-2 {
     background: url("../images/temp_2.webp");
     background-repeat: no-repeat;
-    width: 1055px;
+    width: 963px;
     height: 720px;
     background-size: contain;
     display: flex;
     flex-direction: column;
     text-align: center;
+    position: relative;
 
 }
 
@@ -253,7 +258,7 @@ h3 {
     text-align: center;
     font-size: 60px;
     font-family: 'Times New Roman',Cambria, Cochin, Georgia, Times,  serif;
-    color: black;
+    color: var(--cerNameColor);
 }
 
 #bg-2 .program-text {
@@ -296,39 +301,37 @@ h3 {
 
 
 #bg-2 .qr {
-    position: relative;
-    display: flex;
-    flex-direction: row;
+    position: absolute;
+    bottom: 70px;
+    right: 71px;
 }
 
-#bg-2 .qr span {
-    position: relative;
-    left: 115px;
-}
 #bg-2 .qr::after {
     content: 'This Certificate is Verfied With QR Code';
     font-size: 10px;
     margin: 0;
     padding: 0;
-    width: 150px;
-    position: relative;
-    right: 20px;
-    top: 115px;
+    width: 118px;
     height: 25px;
-    line-height: 15px;
+    position: absolute;
+    right: -1px;
+    /* top: 88px; */
+    bottom: -7px;
+    line-height: 13px;
 
 }
 /* Templete-3 Styles */
 #bg-3 {
     background: url("../images/temp_3.webp");
     background-repeat: no-repeat;
-    width: 513px;
+    width: 498px;
     height: 720px;
     background-size: contain;
     display: flex;
     flex-direction: column;
     margin-left: 20%;
     text-align: center;
+    position: relative;
 
 }
 
@@ -343,10 +346,10 @@ h3 {
 }
 #bg-3 .name {
     text-align: center;
-    font-size: 40px;
+    font-size: 31px;;
     line-height: 35px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: black;
+    color: var(--cerNameColor);
 }
 
 #bg-3 .program-text {
@@ -388,40 +391,37 @@ h3 {
 
 
 #bg-3 .qr {
-    position: relative;
-    display: flex;
-    flex-direction: row;
+    position: absolute;
+    bottom: 50px;
+    right: 53px;
 }
 
-#bg-3 .qr span {
-    position: relative;
-    left: 50px;
-}
 #bg-3 .qr::after {
     content: 'This Certificate is Verfied With QR Code';
     font-size: 10px;
     margin: 0;
     padding: 0;
-    width: 150px;
-    position: relative;
-    right: 80px;
-    top: 115px;
+    width: 118px;
     height: 25px;
-    line-height: 15px;
+    position: absolute;
+    right: -1px;
+    /* top: 88px; */
+    bottom: -7px;
+    line-height: 13px;
 
 }
-
 /* Templete-4 styles */
 #bg-4 {
     background: url("../images/temp_4.webp");
     background-repeat: no-repeat;
-    width: 513px;
+    width: 497px;
     height: 720px;
     background-size: contain;
     display: flex;
     flex-direction: column;
     margin-left: 20%;
     text-align: center;
+    position: relative;
 
 }
 
@@ -436,10 +436,11 @@ h3 {
 }
 #bg-4 .name {
     text-align: center;
-    font-size: 40px;
+    font-size: 31px;
     line-height: 35px;
     font-family: 'Cairo',dd,Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: black;
+    color: var(--cerNameColor);
+    
 }
 
 #bg-4 .program-text {
@@ -482,26 +483,23 @@ h3 {
 
 
 #bg-4 .qr {
-    position: relative;
-    display: flex;
-    flex-direction: row;
+    position: absolute;
+    bottom: 62px;
+    right: 23px;
 }
 
-#bg-4 .qr span {
-    position: relative;
-    left: 50px;
-}
 #bg-4 .qr::after {
     content: 'This Certificate is Verfied With QR Code';
     font-size: 10px;
     margin: 0;
     padding: 0;
-    width: 150px;
+    width: 118px;
     height: 25px;
-    position: relative;
-    right: 80px;
-    top: 100px;
-    line-height: 15px;
+    position: absolute;
+    right: -1px;
+    /* top: 88px; */
+    bottom: -7px;
+    line-height: 13px;
 
 }
 /* Templete-5 styles */
@@ -509,12 +507,13 @@ h3 {
 #bg-5 {
     background: url("../images/temp_5.webp");
     background-repeat: no-repeat;
-    width: 1055px;
+    width: 966px;
     height: 720px;
     background-size: contain;
     display: flex;
     flex-direction: column;
     text-align: center;
+    position: relative;
 
 }
 
@@ -531,7 +530,7 @@ h3 {
     text-align: center;
     font-size: 60px;
     font-family: 'Cairo',Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: black;
+    color: var(--cerNameColor);
 }
 
 #bg-5 .program-text {
@@ -574,26 +573,23 @@ h3 {
 
 
 #bg-5 .qr {
-    position: relative;
-    display: flex;
-    flex-direction: row;
+    position: absolute;
+    bottom: 92px;
+    right: 28px;
 }
 
-#bg-5 .qr span {
-    position: relative;
-    right: 150px;
-}
-/* #bg-5 .qr::after {
+#bg-5 .qr::after {
     content: 'This Certificate is Verfied With QR Code';
     font-size: 10px;
     margin: 0;
     padding: 0;
-    width: 150px;
+    width: 118px;
     height: 25px;
-    position: relative;
-    right: 20px;
-    top: 115px;
-    line-height: 15px;
+    position: absolute;
+    right: -1px;
+    /* top: 88px; */
+    bottom: -7px;
+    line-height: 13px;
 
-} */
+}
 

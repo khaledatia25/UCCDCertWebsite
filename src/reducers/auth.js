@@ -8,7 +8,7 @@ function getCookie(cName) {
     })
     return res;
 }
-console.log(getCookie('token'));
+getCookie('token');
 export default (state = {
     token: getCookie('token'),
 }, action) => {

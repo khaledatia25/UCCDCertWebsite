@@ -8,8 +8,6 @@ import AppRouter from './routers/AppRouter';
 import './style/certificate.css'
 import './style/styles.css';
 import './style/landing-style.css';
-import {v4 as uuid } from 'uuid';
-console.log(uuid());
 const store = configureStore(); 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const jsx = (
@@ -17,9 +15,6 @@ const jsx = (
     <AppRouter />  
   </Provider>
 );
-
-
-store.dispatch(startSetUsers());
 
 root.render(jsx);
 

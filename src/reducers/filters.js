@@ -3,6 +3,7 @@
 const filterReducersDefaultState = {
     text: '',
     searchBy: 'id',
+    numAppears: 50,
 };
 
 const filtersReducers = (state = filterReducersDefaultState, action) => {
@@ -27,6 +28,11 @@ const filtersReducers = (state = filterReducersDefaultState, action) => {
                 ...state,
                 searchBy: 'program'
             };
+        case 'SET_NUMBER_APPEARS':
+            return {
+                state,
+                numAppears: action.numAppears
+            }
         default:
             return state;            
     }

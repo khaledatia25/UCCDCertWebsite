@@ -4,6 +4,8 @@ import Cert from "./Cert";
 import Qr from '../actions/cert'
 import TempleteItem from "./TempleteItem";
 import base from "../actions/base";
+import html2pdf from '../../node_modules/html2pdf.js/dist/html2pdf.bundle.min';
+
 
  
 class CertPage extends React.Component {
@@ -17,8 +19,6 @@ class CertPage extends React.Component {
             date: false,
             description: false,
             hours: false,
-            qr: 130,
-            temp5: 100,
         }
         this.numberOfRenderd = 0;
     }
@@ -66,14 +66,27 @@ class CertPage extends React.Component {
         
     }
     download = () => {
-        const options = {
-            id: this.state.id,
-            date: this.state.date,
-            hours: this.state.hours,
-            tempNum: this.state.tempNum,
-            description: this.state.description
-        };
-        Qr(options);
+        let id = `bg-${this.state.tempNum}`
+        const element = document.getElementById(id);
+        console.log(element)
+        let opt = {
+            margin: 0,
+            filename: `${this.state.name}.pdf`,
+            image: {
+            type: 'jpg',
+            quality: 1
+            },
+            html2canvas: {
+            scale: 2
+            },
+            jsPDF: {
+            unit: 'in',
+            format:'letter',
+            orientation: 'landscape'
+            }
+            };
+        html2pdf().from(element).set(opt).save();
+
     }
     render(){
         return (
@@ -115,7 +128,7 @@ class CertPage extends React.Component {
                         <TempleteItem  temp={5} templeteName="Templete-5"/>                    
                     </div>
                     </div>
-                    <a className="button" href={`${base}/certificate/${this.state.id}/${this.state.tempNum}/${this.state.date}/${this.state.description}/${this.state.hours}`} target="_blank">Download</a>
+                    <a className="button"  href={`${base}/certificate/${this.state.id}/${this.state.tempNum}/${this.state.date}/${this.state.description}/${this.state.hours}`} target="_blank">Download</a>
                 </div>
                 <div className="cert-content" id="gg">
                     <Cert temp5={this.state.temp5} qrP = {this.state.qr} {...this.props.user} temp={this.state.tempNum} showHours={this.state.hours} showDate={this.state.date} showDesc={this.state.description}/>

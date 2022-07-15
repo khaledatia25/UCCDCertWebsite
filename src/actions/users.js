@@ -132,7 +132,6 @@ export const startSetUsers = () => {
                 then((response) => { 
                     return response.json();
                  }).then((data) => {
-                     console.log(data);
                      dispatch(setUsers(data));
                  })
                  .catch((e) => {
@@ -159,7 +158,7 @@ export const getUser = async (nid) => {
             then((response) => { 
                 return response.json();
              }).then((data) => {
-                 console.log(data);
+                 
                  return data;
              })
              .catch((e) => {

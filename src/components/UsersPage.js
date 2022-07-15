@@ -5,18 +5,31 @@ import Header from './Header';
 import { connect } from "react-redux";
 import { startSetUsers } from "../actions/users";
 
-const UsersPage = (props) => {
-    async function componentDidMount() {
-        await props.dispatch();
-      }
-    return(
-    <div className="page">
-        <Header />
-        <div className="spacing"></div>
-        <UserSearch />
-        <UsersList />
-    </div>
-);}
+class UsersPage extends React.Component
+ {
+    constructor(props){
+        super(props);
+        this.startSetUsers = props.dispatch;
+        this.state = {
+            isLoaded: false,
+            data: null
+        }
+    }
+    componentDidMount(){
+        this.startSetUsers();
+    }
+    render(){
+        return(
+            <div className="page">
+                <Header />
+                <div className="spacing"></div>
+                <UserSearch />
+                <UsersList />
+            </div>
+            )
+    }
+    
+}
 
 const mapDispatchToProps = (dispatch) => {
     return {

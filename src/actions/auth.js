@@ -33,7 +33,7 @@ export const startLogin =  ({username = '', password = ''}) => {
                         return data
                     }
                     dispatch({...login(data.token)});
-                    setCookie('token', data.token, 10);
+                    setCookie('token', data.token, 100);
                 }).catch((e) => {
                      throw e;
                  });

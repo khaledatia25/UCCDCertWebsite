@@ -24,7 +24,7 @@ class VerificationPage extends React.Component {
             <div className="information-box">
                 <div className="user-name">{this.state.user.name}</div>
                 
-                <div className='verf-description'>{" "}took{" "}{this.state.user.program}{" "}{this.state.user.hours}{" "}hours program from UCCD Univerrsity Center for Career Development Mansura Engineering</div>
+                <div className='verf-description'>{" "}took{" "}{this.state.user.program}{" "}{this.state.user.hours}{" "}hours program from UCCD University Center for Career Development Mansoura Engineering</div>
                 
             </div>
             <div id='footer'>

@@ -7,7 +7,8 @@ import { startRemoveUser } from "../actions/users";
 const UserList = (props) => {
     let num = 1;
     return(
-    <div className="user-list">  
+    <div className="user-list">
+    <div className="user-list-scroll"> 
         <table  className="user-table">
             <thead>
                 <tr>
@@ -20,7 +21,7 @@ const UserList = (props) => {
             </thead> 
             <tbody> 
                 {
-                    props.users.map((user) => {
+                    props.users.slice(0, props.num).map((user) => {
                         return (<UserListItem onDeleteUserClick={() => {
                             props.dispatch(startRemoveUser(user.id));
                         }} key={user.id} {...user} num={num++}/>);
@@ -30,17 +31,20 @@ const UserList = (props) => {
             </tbody>
             
         </table>
+        
+        </div>
         {
             props.users.length === 0 &&
             <div className="no-users-msg">No Users</div>
-        }  
+        }
     </div>          
 );
         }
 
 const mapStateToProps = (state) => {
     return {
-        users: getVisibleUsers(state.users, state.filters)
+        users: getVisibleUsers(state.users, state.filters),
+        num: state.filters.numAppears
     }
 }
 
