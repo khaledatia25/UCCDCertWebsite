@@ -156,7 +156,6 @@ select {
 .user-list-scroll {
     height: 100%;
     overflow: auto;
-    height: calc(100%-207px);
 }
 .page 
 .user-list 

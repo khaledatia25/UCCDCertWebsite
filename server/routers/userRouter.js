@@ -117,9 +117,10 @@ router.get('/certificate/:id/:temp/:date/:description/:hours',cors(corsOptions),
         if(!result.length){
             return res.status(404).send("Not Found");
         }
+        const name = result[0].name;
         const stream =  await res.writeHead(200, {
             'Content-Type': 'application/pdf',
-            'Content-Disposition': 'attachment;filename=invoice.pdf'
+            'Content-Disposition': `attachment;filename=${name}.pdf`
         });
         pdf(options,result[0],async (chunk) => {
             await stream.write(chunk);

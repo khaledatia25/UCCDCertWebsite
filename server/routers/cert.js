@@ -17,6 +17,7 @@ const buildPDF = async (certOptions, user ,dataCallBack, endCallBack) => {
         
 
     };
+    const programColor = "#3030f6";
     const renderDesc = () => {
         if(certOptions.description === 'true'){
             
@@ -63,7 +64,7 @@ const buildPDF = async (certOptions, user ,dataCallBack, endCallBack) => {
                     align: 'center'
                 });
             doc
-            .fillColor('black')
+            .fillColor(programColor)
             .font('Times-Roman')
             .fontSize(25)
             .text(`For attending ${user.program} Program`,50,295,{
@@ -98,7 +99,7 @@ const buildPDF = async (certOptions, user ,dataCallBack, endCallBack) => {
                     align: 'center'
                 });
             doc
-            .fillColor('black')
+            .fillColor(programColor)
             .font('Times-Roman')
             .fontSize(25)
             .text(`For attending ${user.program} Program`,50,315,{
@@ -142,7 +143,7 @@ const buildPDF = async (certOptions, user ,dataCallBack, endCallBack) => {
                     width: 600
                 });
             doc
-            .fillColor('black')
+            .fillColor(programColor)
             .font('Times-Roman')
             .fontSize(25)
             .text(`For attending ${user.program} Program`,50,350,{
@@ -186,7 +187,7 @@ const buildPDF = async (certOptions, user ,dataCallBack, endCallBack) => {
                     width: 600
                 });
             doc
-            .fillColor('black')
+            .fillColor(programColor)
             .font('Times-Roman')
             .fontSize(25)
             .text(`For attending ${user.program} Program`,50,370,{
@@ -229,7 +230,7 @@ const buildPDF = async (certOptions, user ,dataCallBack, endCallBack) => {
                         align: 'center'
                     });
                 doc
-                .fillColor('black')
+                .fillColor(programColor)
                 .font('Times-Roman')
                 .fontSize(25)
                 .text(`For attending ${user.program} Program`,50,315,{
