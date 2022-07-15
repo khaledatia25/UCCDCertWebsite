@@ -93,7 +93,7 @@ const buildPDF = async (certOptions, user ,dataCallBack, endCallBack) => {
             doc.image('temp-2.png', 0, 0,{fit: [844, 800]})
                 .stroke()
             doc.font('Times-Roman')
-                .fontSize(50).fillColor('black')
+                .fontSize(50).fillColor('#0aa64d')
                 .text(`${user.name}`, 50, 270, {
                     align: 'center'
                 });
@@ -112,8 +112,16 @@ const buildPDF = async (certOptions, user ,dataCallBack, endCallBack) => {
             `,80,340,{
                 align: 'center'
             });
-            
-            doc.image('q.png', 657.5, 440, {fit: [90, 90]})
+            doc
+                .fillColor('black')
+                .font('Times-Roman')
+                .fontSize(10)
+                .text("This certificate is verified with QR code", 657.5, 502,{
+                    align: 'center',
+                    width: 110,
+                    lineGap: -2
+                });
+            doc.image('q.png', 672.5, 415, {fit: [80, 80]})
                 .stroke();    
         
             doc.end();
@@ -127,29 +135,37 @@ const buildPDF = async (certOptions, user ,dataCallBack, endCallBack) => {
             doc.image('temp-3.png', 0, 0,{fit: [860, 830]})
                 .stroke()
             doc.font('Times-Roman')
-                .fontSize(40).fillColor('black')
-                .text(`${user.name}`, 50, 310, {
+                .fontSize(40).fillColor('#0aa64d')
+                .text(`${user.name}`, 0, 310, {
                     align: 'center',
                     lineGap: -2,
-                    width: 500
+                    width: 600
                 });
             doc
             .fillColor('black')
             .font('Times-Roman')
             .fontSize(25)
-            .text(`For attending ${user.program} Program`,50,390,{
-                align: 'center'
+            .text(`For attending ${user.program} Program`,50,350,{
+                align: 'center',
             });
             doc
             .fillColor('black')
             .font('Times-Roman')
             .fontSize(20)
             .text(`${renderHours()}${renderDate()}${renderDesc()}
-            `,80,415,{
-                align: 'center'
+            `,80,375,{
+                align: 'center',
             });
-            
-            doc.image('q.png', 440, 680, {fit: [90, 90]})
+            doc
+                .fillColor('black')
+                .font('Times-Roman')
+                .fontSize(10)
+                .text("This certificate is verified with QR code", 425, 747,{
+                    align: 'center',
+                    width: 110,
+                    lineGap: -2
+                });
+            doc.image('q.png', 435, 650, {fit: [90, 90]})
                 .stroke();    
         
             doc.end();
@@ -163,17 +179,17 @@ const buildPDF = async (certOptions, user ,dataCallBack, endCallBack) => {
             doc.image('temp-4.png', 0, 0,{fit: [860, 830]})
                 .stroke()
             doc.font('Times-Roman')
-                .fontSize(40).fillColor('black')
-                .text(`${user.name}`, 50, 330, {
+                .fontSize(40).fillColor('#0aa64d')
+                .text(`${user.name}`, 0, 330, {
                     align: 'center',
                     lineGap: -2,
-                    width: 500
+                    width: 600
                 });
             doc
             .fillColor('black')
             .font('Times-Roman')
             .fontSize(25)
-            .text(`For attending ${user.program} Program`,50,410,{
+            .text(`For attending ${user.program} Program`,50,370,{
                 align: 'center'
             });
             doc
@@ -181,11 +197,19 @@ const buildPDF = async (certOptions, user ,dataCallBack, endCallBack) => {
             .font('Times-Roman')
             .fontSize(20)
             .text(`${renderHours()}${renderDate()}${renderDesc()}
-            `,80,435,{
+            `,80,395,{
                 align: 'center'
             });
-            
-            doc.image('q.png', 440, 670, {fit: [90, 90]})
+                doc
+                .fillColor('black')
+                .font('Times-Roman')
+                .fontSize(10)
+                .text("This certificate is verified with QR code", 455, 736,{
+                    align: 'center',
+                    width: 110,
+                    lineGap: -2
+                });
+            doc.image('q.png', 470, 650, {fit: [80, 80]})
                 .stroke();    
         
             doc.end();
@@ -219,9 +243,18 @@ const buildPDF = async (certOptions, user ,dataCallBack, endCallBack) => {
                 `,80,340,{
                     align: 'center'
                 });
-                
-                doc.image('q.png', 677.5, 440, {fit: [90, 90]})
-                    .stroke();    
+                doc
+                .fillColor('black')
+                .font('Times-Roman')
+                .fontSize(10)
+                .text("This certificate is verified with QR code", 677.5, 501,{
+                    align: 'center',
+                    width: 110,
+                    lineGap: -2
+                });
+                doc.image('q.png', 692.5, 415, {fit: [80, 80]})
+                    .stroke();
+
             
                 doc.end();
                 break;    
