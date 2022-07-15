@@ -13,7 +13,7 @@ const localhost = {
     password: '',
     database: "uccd"
 }
-const db = mysql.createConnection(localhost);
+const db = mysql.createConnection(server);
 
 // connect to mySql
 db.connect( async(err)=> {
