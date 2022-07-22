@@ -17,6 +17,42 @@ const buildPDF = async (certOptions, user ,dataCallBack, endCallBack) => {
         
 
     };
+    const nameSize = () => {
+        switch(certOptions.temp){
+                case '1':
+                    if(user.name.length > 50)return 30;
+                    if(user.name.length > 46)return 35;
+                    if(user.name.length > 40)return 40;
+                    if(user.name.length > 32)return 45;
+                    else return 60;
+                case '2':
+                    if(user.name.length > 40)return 30;
+                    if(user.name.length > 37)return 35;
+                    if(user.name.length > 32)return 40;
+                    else return 45;
+                case '3':
+                    if(user.name.length > 46)return 15;
+                    if(user.name.length > 42)return 20;
+                    if(user.name.length > 38)return 25;
+                    if(user.name.length > 34)return 30;
+                    if(user.name.length > 30)return 35;
+                    return 40;
+                case '4':
+                    if(user.name.length > 46)return 15;
+                    if(user.name.length > 42)return 20;
+                    if(user.name.length > 38)return 25;
+                    if(user.name.length > 34)return 30;
+                    if(user.name.length > 30)return 35;
+                    return 40;
+                case '5':
+                    if(user.name.length > 45)return 25;
+                    if(user.name.length > 40)return 30;
+                    if(user.name.length > 37)return 35;
+                    if(user.name.length > 32)return 40;
+                    else return 45;    
+
+        }
+    }
     const programColor = "#3030f6";
     const renderDesc = () => {
         if(certOptions.description === 'true'){
@@ -37,7 +73,7 @@ const buildPDF = async (certOptions, user ,dataCallBack, endCallBack) => {
     }
     const renderDate = () => {
         if(certOptions.date === 'true'){
-            return `From ${moment(parseInt(user.startDate)).format('MMM Do, Y')} To ${moment(parseInt(user.endDate)).format('MMM Do, Y')}
+            return `From ${moment(parseInt(user.startDate)).format('MMMM Do, Y')} To ${moment(parseInt(user.endDate)).format('MMMM Do, Y')}
 `;
         }else{
             return '';
@@ -59,7 +95,7 @@ const buildPDF = async (certOptions, user ,dataCallBack, endCallBack) => {
             doc.image('temp-1.png', 0, 0,{fit: [840, 800]})
                 .stroke()
             doc.font('fonts/Sinami demo.ttf')
-                .fontSize(60).fillColor('#0aa64d')
+                .fontSize(nameSize()).fillColor('#0aa64d')
                 .text(`${user.name}`, 50, 250, {
                     align: 'center'
                 });
@@ -94,7 +130,7 @@ const buildPDF = async (certOptions, user ,dataCallBack, endCallBack) => {
             doc.image('temp-2.png', 0, 0,{fit: [844, 800]})
                 .stroke()
             doc.font('Times-Roman')
-                .fontSize(50).fillColor('#0aa64d')
+                .fontSize(nameSize()).fillColor('#0aa64d')
                 .text(`${user.name}`, 50, 270, {
                     align: 'center'
                 });
@@ -136,7 +172,7 @@ const buildPDF = async (certOptions, user ,dataCallBack, endCallBack) => {
             doc.image('temp-3.png', 0, 0,{fit: [860, 830]})
                 .stroke()
             doc.font('Times-Roman')
-                .fontSize(40).fillColor('#0aa64d')
+                .fontSize(nameSize()).fillColor('#0aa64d')
                 .text(`${user.name}`, 0, 310, {
                     align: 'center',
                     lineGap: -2,
@@ -225,7 +261,7 @@ const buildPDF = async (certOptions, user ,dataCallBack, endCallBack) => {
                 doc.image('temp-5.png', 0, 0,{fit: [844, 800]})
                     .stroke()
                 doc.font('Times-Roman')
-                    .fontSize(50).fillColor('black')
+                    .fontSize(nameSize()).fillColor('#0aa64d')
                     .text(`${user.name}`, 50, 270, {
                         align: 'center'
                     });
