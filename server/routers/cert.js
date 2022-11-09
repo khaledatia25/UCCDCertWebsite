@@ -20,11 +20,10 @@ const buildPDF = async (certOptions, user ,dataCallBack, endCallBack) => {
     const nameSize = () => {
         switch(certOptions.temp){
                 case '1':
-                    if(user.name.length > 50)return 30;
-                    if(user.name.length > 46)return 35;
-                    if(user.name.length > 40)return 40;
-                    if(user.name.length > 32)return 45;
-                    else return 60;
+                    if(user.name.length > 40)return 30;
+                    if(user.name.length > 37)return 35;
+                    if(user.name.length > 32)return 40;
+                    else return 45;
                 case '2':
                     if(user.name.length > 40)return 30;
                     if(user.name.length > 37)return 35;
@@ -92,18 +91,16 @@ const buildPDF = async (certOptions, user ,dataCallBack, endCallBack) => {
             });
             doc.on('data', dataCallBack);
             doc.on('end', endCallBack);
-            doc.image('temp-1.png', 0, 0,{fit: [840, 800]})
-                .stroke()
-            doc.font('fonts/Sinami demo.ttf')
+            doc.font('Times-Roman')
                 .fontSize(nameSize()).fillColor('#0aa64d')
-                .text(`${user.name}`, 50, 250, {
+                .text(`${user.name}`, 50, 270, {
                     align: 'center'
                 });
             doc
             .fillColor(programColor)
             .font('Times-Roman')
             .fontSize(25)
-            .text(`For attending ${user.program} Program`,50,295,{
+            .text(`For attending ${user.program} Program`,50,315,{
                 align: 'center'
             });
             doc
@@ -111,11 +108,19 @@ const buildPDF = async (certOptions, user ,dataCallBack, endCallBack) => {
             .font('Times-Roman')
             .fontSize(20)
             .text(`${renderHours()}${renderDate()}${renderDesc()}
-            `,80,320,{
+            `,80,340,{
                 align: 'center'
             });
-            
-            doc.image('q.png', 657.5, 440, {fit: [90, 90]})
+            doc
+                .fillColor('black')
+                .font('Times-Roman')
+                .fontSize(10)
+                .text("This certificate is verified with QR code", 657.5, 502,{
+                    align: 'center',
+                    width: 110,
+                    lineGap: -2
+                });
+            doc.image('q.png', 672.5, 415, {fit: [80, 80]})
                 .stroke();    
         
             doc.end();
