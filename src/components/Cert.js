@@ -7,10 +7,9 @@ const Cert = ({qrP,name, temp5,showHours,startDate, endDate, hours, description,
     let nameSize = () => {
         switch(temp){
             case 1:
-                if(name.length > 46)return '45px';
-                if(name.length > 40)return '50px';
-                if(name.length > 35)return '60px';
-                else return '70px';
+                if(name.length > 43)return '35px'
+                if(name.length > 35)return '40px';
+                else return '50px';
                 break;
             case  2:
                 if(name.length > 43)return '35px'

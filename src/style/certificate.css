@@ -155,14 +155,13 @@ h3 {
 }
 /* Templete-1 Styles */
 #bg-1 {
-    background: url("../images/temp_1.webp");
+    background: white;
     background-repeat: no-repeat;
-    width: 979px;
-    height: 800px;
+    width: 963px;
+    height: 720px;
     background-size: contain;
     display: flex;
     flex-direction: column;
-    align-items: center;
     text-align: center;
     position: relative;
 
@@ -171,28 +170,24 @@ h3 {
 #bg-1 .name-text {
     display: flex;
     flex-direction: column;
-    width: 100%;
     line-height: 5px;
-    margin-top: 246px;
+    margin-top: 283px;
 }
 #bg-1 .name-text p {
     display: inline-block;
 }
-
 #bg-1 .name {
     text-align: center;
-    font-size: 70px;
-    line-height: 10px;
-    font-family: Sinami,Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
+    font-family: 'Times New Roman',Cambria, Cochin, Georgia, Times,  serif;
     color: var(--cerNameColor);
-    
 }
 
 #bg-1 .program-text {
     color: var(--programColor);
     text-align: center;
     font-size: 30px;
-    margin-top: -30px;
+    margin-top: -10px;
     
 }
 
@@ -200,7 +195,7 @@ h3 {
     color: black;
     text-align: center;
     margin-top: 0px;
-    font-size: 25px;
+    font-size: 30px;
     
     
 }
@@ -209,7 +204,7 @@ h3 {
     color: black;
     text-align: center;
     margin-top: 1px;
-    font-size: 25px;
+    font-size: 30px;
     
 }
 
@@ -229,11 +224,26 @@ h3 {
 
 #bg-1 .qr {
     position: absolute;
-    bottom: 65px;
-    right: 103px;
+    bottom: 104px;
+    right: 71px;
 }
 
+#bg-1 .qr::after {
+    content: 'This Certificate is Verfied With QR Code';
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+    width: 118px;
+    height: 25px;
+    position: absolute;
+    right: -1px;
+    /* top: 88px; */
+    bottom: -7px;
+    line-height: 13px;
 
+}
+
+/* Template - 2 */
 #bg-2 {
     background: url("../images/temp_2.webp");
     background-repeat: no-repeat;
@@ -304,7 +314,7 @@ h3 {
 
 #bg-2 .qr {
     position: absolute;
-    bottom: 70px;
+    bottom: 104px;
     right: 71px;
 }
 
@@ -395,7 +405,7 @@ h3 {
 
 #bg-3 .qr {
     position: absolute;
-    bottom: 50px;
+    bottom: 90px;
     right: 53px;
 }
 
@@ -488,7 +498,7 @@ h3 {
 
 #bg-4 .qr {
     position: absolute;
-    bottom: 62px;
+    bottom: 92px;
     right: 23px;
 }
 
@@ -578,7 +588,7 @@ h3 {
 
 #bg-5 .qr {
     position: absolute;
-    bottom: 92px;
+    bottom: 118px;
     right: 28px;
 }
 

@@ -113,7 +113,7 @@ class CertPage extends React.Component {
                     <hr />{}
                     <div className="templetes">
                     <div onClick={(e) => this.onTempClick(e,1)}>
-                        <TempleteItem  temp={1} templeteName="Templete-1"/>
+                        <TempleteItem  temp={0} templeteName="Templete-1"/>
                     </div>
                     <div onClick={(e) => this.onTempClick(e,2)}>
                         <TempleteItem  temp={2} templeteName="Templete-2"/>

@@ -10,7 +10,7 @@ function LandingHeader() {
                 <img className="logo-3" src={require("../images/landing-page/Logo 1-01.webp")} alt=""/>
             </div>
             <ul className="links">
-                <li className="contact"><a target="blank" href="https://www.facebook.com/UCCD.Mans.Eng" className='-link'>Contact</a></li>
+                <li className="contact"><a  href="http://about-us.uccdeng.com" className='-link'>About Us</a></li>
                 <div className="v-line"></div>
                 <li className="admin"><NavLink className='-link' to="/login" >Admin</NavLink></li>
                 <img src={require("../images/landing-page/Top Shape-02.webp")}/>
