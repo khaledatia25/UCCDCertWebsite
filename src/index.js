@@ -4,11 +4,10 @@ import { Provider } from 'react-redux';
 import { startSetUsers } from './actions/users';
 import configureStore from './store/configureStore';
 import AppRouter from './routers/AppRouter';
-import 'purecss/build/pure.css';
+// import 'purecss/build/pure.css';
 import './style/certificate.css'
-import './style/styles.css'
-import {v4 as uuid } from 'uuid';
-console.log(uuid());
+import './style/styles.css';
+import './style/landing-style.css';
 const store = configureStore(); 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const jsx = (
@@ -16,9 +15,6 @@ const jsx = (
     <AppRouter />  
   </Provider>
 );
-
-
-store.dispatch(startSetUsers());
 
 root.render(jsx);
 

@@ -24,15 +24,15 @@ class VerificationPage extends React.Component {
             <div className="information-box">
                 <div className="user-name">{this.state.user.name}</div>
                 
-                <div className='verf-description'>{" "}took{" "}{this.state.user.program}{" "}{this.state.user.hours}{" "}hours program from UCCD Univerrsity Center for Career Development Mansura Engineering</div>
+                <div className='verf-description'>{" "}took{" "}{this.state.user.program}{" "}{this.state.user.hours}{" "}hours program from UCCD University Center for Career Development Mansoura Engineering</div>
                 
             </div>
             <div id='footer'>
                 <div className='container text-center'>
                 <p>
-                    This Website designed and created by our volunteers
-                    <a href='https://www.linkedin.com/in/khaled-waleed-mohammed/'>Khaled Waleed Attia</a>{", "}
-                    <a>Ahmed Mohammed Seif</a>
+                    This Website designed and created by our volunteers{" "}
+                    <a target='_blank' href='https://www.linkedin.com/in/khaled-waleed-mohammed/'>Khaled Waleed Attia</a>{", "}
+                    <a>{" "}Ahmed Mohammed Seif</a>
                 </p>
                 </div>
             </div>

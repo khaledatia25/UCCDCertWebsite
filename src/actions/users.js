@@ -1,4 +1,5 @@
 import {v4 as uuid} from 'uuid';
+import base from './base';
  // ADD USER
 export const addUser = (user) => ({
     type: 'ADD_USER',
@@ -6,7 +7,7 @@ export const addUser = (user) => ({
 });
 
 export const startAddUser =  (userData = {}) => {
-    return  (dispatch, getState) => {
+    return  async (dispatch, getState) => {
         const {
             name = '',
             nid = '',
@@ -30,7 +31,7 @@ export const startAddUser =  (userData = {}) => {
                 },
                 body: JSON.stringify(user),
             }
-            return  fetch("http://localhost:5000/user", requestOptions).
+            return  await fetch(`${base}/user`, requestOptions).
                 then((response) => { 
                     console.log(response);
                     dispatch(addUser(user));
@@ -53,7 +54,7 @@ export const removeUser = ({ id } = {}) => ({
 });
 
 export const startRemoveUser =  (id) => {
-    return (dispatch, getState) => {
+    return async (dispatch, getState) => {
         try{
             const requestOptions = {
                 method: 'DELETE',
@@ -62,7 +63,7 @@ export const startRemoveUser =  (id) => {
                     'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjE1NDU0IiwiaWF0IjoxNjUxMDYyODkzfQ.NP2co5pIllaxi8dv4ZGC6L9XqgWBnQ_tCZRxC5ot-Tk'
                 },
             };
-            return fetch(`http://localhost:5000/users/${id}`, requestOptions).
+            return await fetch(`${base}/users/${id}`, requestOptions).
             then((res) => {
                 console.log(res);
                 dispatch(removeUser({id}));
@@ -83,8 +84,8 @@ export const editUser = (id, updatedUser) => ({
     updatedUser
 });
 
-export const startEditUser = (id, updatedUser) => {
-    return (dispatch, getState) => {
+export const startEditUser =  (id, updatedUser) => {
+    return  (dispatch, getState) => {
         try{
             const requestOptions = {
                 method: 'PATCH',
@@ -94,7 +95,7 @@ export const startEditUser = (id, updatedUser) => {
                 },
                 body: JSON.stringify(updatedUser),
             }
-            return fetch(`http://localhost:5000/users/${id}`, requestOptions).
+            return  fetch(`${base}/users/${id}`, requestOptions).
             then((res) => {
                 console.log(res);
                 dispatch(editUser(id,updatedUser));
@@ -127,11 +128,10 @@ export const startSetUsers = () => {
                     'Authorization': `Bearer ${token}`
                 },
             }
-            return await fetch("http://localhost:5000/users", requestOptions).
+            return await fetch(`${base}/users`, requestOptions).
                 then((response) => { 
                     return response.json();
                  }).then((data) => {
-                     console.log(data);
                      dispatch(setUsers(data));
                  })
                  .catch((e) => {
@@ -154,15 +154,15 @@ export const getUser = async (nid) => {
             },
         }
         console.log(nid)
-        return await fetch(`http://localhost:5000/user/${nid}`, requestOptions).
+        return await fetch(`${base}/user/${nid}`, requestOptions).
             then((response) => { 
                 return response.json();
              }).then((data) => {
-                 console.log(data);
+                 
                  return data;
              })
              .catch((e) => {
-                 throw e;
+                 console.log(e);
              });
     }catch(e){
         console.log(e)
@@ -179,7 +179,7 @@ export const getUserID = async (id) => {
             },
         }
         console.log(id);
-        return await fetch(`http://localhost:5000/users/${id}`, requestOptions).
+        return await fetch(`${base}/users/${id}`, requestOptions).
             then((response) => { 
                 return response.json();
              }).then((data) => {

@@ -7,7 +7,7 @@ import { history } from '../routers/AppRouter';
 
 const EditPage = (props) => {
     return (
-        <div className='l-box-lrg pure-u-1 pure-u-md-2-5'>
+        <div className='page edit-page'>
         <Header/>
         <div>
             <UserForm 
@@ -19,12 +19,11 @@ const EditPage = (props) => {
                 }}
 
             />
-            <div className='edit'>
-                <button className="pure-button button-xlarge button-error" onClick={() => {
+                <button className="delete-button" onClick={() => {
                     props.dispatch(startRemoveUser(props.user.id));
                     history.go(-1);
                 }}>Delete</button>
-            </div>
+            
         </div>
         </div>
     );  

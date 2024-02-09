@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Header from "./Header";
 import { startAddUser } from "../actions/users";
 const AddUserPage = (props) => (
-    <div className='l-box-lrg pure-u-1 pure-u-md-2-5'>
+    <div className='page'>
         <Header/>
         <UserForm 
                     onSubmit={(user) => {

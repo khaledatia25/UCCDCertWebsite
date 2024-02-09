@@ -14,3 +14,8 @@ export const searchByProgram = () => ({
 export const searchByName = () => ({
     type:'SEARCH_BY_NAME'
 });
+
+export const setNumberAppears = (num) => ({
+    type: 'SET_NUMBER_APPEARS',
+    numAppears: num
+});

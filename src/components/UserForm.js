@@ -13,8 +13,8 @@ export default class UserForm extends React.Component {
             description: props.user ? props.user.description : '',
             nid: props.user ? props.user.nid : '',
             gender: props.user ? props.user.gender : 'm',
-            startDate: props.user ? moment(props.user.startDate): moment(),
-            endDate: props.user ? moment(props.user.endDate) : moment(),
+            startDate: props.user ? moment(parseInt(props.user.startDate)): moment(),
+            endDate: props.user ? moment(parseInt(props.user.endDate)) : moment(),
             program: props.user ? props.user.program : "",
             hours: props.user ? props.user.hours : 0,
             startFocused: false,
@@ -89,9 +89,7 @@ export default class UserForm extends React.Component {
 
     render(){
         return (
-            <div >
-                <div className='spacing'></div>
-                <form className="pure-form pure-form-stacked users-form" onSubmit={this.onSubmit}>
+                <form className="user-form" onSubmit={this.onSubmit}>
                     {this.state.error && <p>{this.state.error}</p>}
                     <fieldset>
                         <label>Name:</label>
@@ -114,7 +112,7 @@ export default class UserForm extends React.Component {
                             onChange={this.onProgramChange}
                         />
                     </fieldset>
-                    <fieldset>
+                    <fieldset className='user-form-s'>
                         <div className='user-form--small'>
                         <label>Gender:</label>
                         <select
@@ -172,7 +170,7 @@ export default class UserForm extends React.Component {
                             onChange={this.onDescriptionChange}
                         />
                     </fieldset>
-                    <fieldset>
+                    <fieldset className='hours'>
                         <label>Number of Hours:</label>
                         <input 
                             className='form-control'
@@ -185,14 +183,12 @@ export default class UserForm extends React.Component {
                     
                     
                     
-                        <button onClick={() => {
+                        <button  onClick={() => {
                             history.go(-1);
-                        }} className="button-xlarge pure-button">Save User</button>
+                        }} className="button">Save User</button>
                     
                     
                 </form>
-                <div className='spacing-bottom'></div>
-            </div>
         );
     }
 
